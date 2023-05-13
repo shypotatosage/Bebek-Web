@@ -103,11 +103,9 @@ class BazaarController extends Controller
         $hashed = hash("sha512", $request->order_id . $request->status_code . $request->gross_amount . $serverKey);
 
         if ($hashed == $request->signature_key) {
-            Log::info('E');
             if ($request->transaction_status == 'capture') {
                 $bazaar = Bazaar::findOrFail($request->order_id);
                 $bazaar->update(['payment' => 'Paid']);
-                Log::info($bazaar);
             }
         }
     }
@@ -123,9 +121,17 @@ class BazaarController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Bazaar $bazaar)
+    public function edit(Request $request)
     {
-        //
+        return view('updatebazaar', [
+            'bazaar' => Bazaar::findOrFail($request->id)
+        ]);
+    }
+
+    public function updateView(Request $request) {
+        return view('updatebazaar', [
+            'bazaar' => Bazaar::findOrFail($request->id)
+        ]);
     }
 
     /**
@@ -207,6 +213,8 @@ class BazaarController extends Controller
                 'slot' => $request->slot,
             ]);
         }
+
+        return redirect('/');
     }
 
     /**

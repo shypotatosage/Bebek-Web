@@ -35,11 +35,10 @@
                                     class="btn btn-secondary font-montserrat fw-semibold py-2 px-4 mt-2 px-5" name="remove"
                                     value="remove">Remove</button>
                             </form>
-                            <form action="/update-bazaar" method="post" enctype="multipart/form-data">
+                            <form action="/edit-bazaar/{{ $item->id }}" method="get" enctype="multipart/form-data">
                                 @csrf
-                                <input type="hidden" name="bazaar_id" value="{{ $item->id }}">
-                                <button type="button" class="btn btn-secondary font-montserrat fw-semibold py-2 px-4 mt-2 px-5"
-                                    data-bs-toggle="modal" data-bs-target="#editbazaar">+
+                                <button type="submit" class="btn btn-secondary font-montserrat fw-semibold py-2 px-4 mt-2 px-5"
+                                    >+
                                     Edit Bazaar</button>
                             </form>
                         @else
