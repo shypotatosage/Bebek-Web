@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light shadow-sm" style="background-color: white">
-    <div class="container w-100 justify-content-lg-center align-items-center nav-between-on-mobile">
+    {{-- <div class="container w-100 justify-content-lg-center align-items-center nav-between-on-mobile"> --}}
         <a class="navbar-brand py-2 px-4" href="/">
             <img src="{{ asset('images/assets/bazaar.png') }}" height="50">
         </a>
@@ -22,5 +22,5 @@
                 </li>
             </ul>
         </div>
-    </div>
+    {{-- </div> --}}
 </nav>

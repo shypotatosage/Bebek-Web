@@ -5,7 +5,7 @@
 }
 
 .nav-item>a:hover {
-    color: #d80032;
+    color: #19A7CE;
 }
 
 .nav-link {
@@ -67,9 +67,9 @@ footer {
 }
 
 .unduh:hover {
-    background-color: #d80032;
+    background-color: #19A7CE;
 }
 
 .unduh {
-    background-color: #ef233c;
+    background-color: #19A7CE;
 }
