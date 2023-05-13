@@ -25,7 +25,7 @@
                     <p class="fw-medium fs-5"><?= $item['starts_from'] ?> - <?= $item['ends_at'] ?></p>
                     <p class="fw-medium fs-5"><?= $item['location'] ?></p>
                     <p class="fw-medium fs-5"><?= $item['price_estimation'] ?></p>
-                    {{-- <form action="{{ route('bazaars.show', $bazaar->id) }}" method="GET" class="me-3 mt-2 mt-md-0 mb-4 mb-md-0"> --}}
+                    {{-- <form action="{{ route('bazaars.show', $item->id) }}" method="GET" class="me-3 mt-2 mt-md-0 mb-4 mb-md-0"> --}}
                     @auth
                         @if (auth()->user()->role == 'Host')
                             <form action="/updatetenants" method="post" enctype="multipart/form-data">
@@ -44,13 +44,13 @@
                                     <div class="modal-content">
                                         <form action="/update-bazaar" method="patch" enctype="multipart/form-data" class="py-5 px-4">
                                             @csrf
-                                            <input type="hidden" name="bazaar_id" value="{{ $bazaar->id }}">
+                                            <input type="hidden" name="bazaar_id" value="{{ $item->id }}">
                                             <div class="d-flex justify-content-center">
-                                                <img src="{{ asset('storage/' . $bazaar->logo) }}" alt="{{ $bazaar->name }}">
+                                                <img src="{{ asset('storage/' . $item->logo) }}" alt="{{ $item->name }}">
                                             </div>
                                             <div class="mb-3 mt-4">
                                                 <label for="inputName" class="mb-2 fw-semibold">Ubah Nama Bazaar</label>
-                                                <input type="text" class="form-control fw-medium" id="inputName" name="name" placeholder="Masukkan Nama Bazaar" value="{{ $bazaar->name }}" required>
+                                                <input type="text" class="form-control fw-medium" id="inputName" name="name" placeholder="Masukkan Nama Bazaar" value="{{ $item->name }}" required>
                                                 <small class="text-danger">
                                                 @foreach ($errors->get('name') as $err)
                                                     @if ($loop->iteration > 1)
@@ -63,7 +63,7 @@
                                             <div class="mb-3 mt-4">
                                                 <label for="inputDescription" class="font-montserrat mb-2 fw-semibold">Ubah Deskripsi Bazaar</label>
                                                 <textarea class="form-control font-montserrat fw-medium" id="inputDescription" name="description"
-                                                    placeholder="Masukkan Deskripsi Bazaar" required>{{ $bazaar->description }}</textarea>
+                                                    placeholder="Masukkan Deskripsi Bazaar" required>{{ $item->description }}</textarea>
                                                 <small class="text-danger font-montserrat">
                                                     @foreach ($errors->get('description') as $err)
                                                         @if ($loop->iteration > 1)
@@ -75,7 +75,7 @@
                                             </div>
                                             <div class="mb-3 mt-4">
                                                 <label for="inputLocation" class="mb-2 fw-semibold">Ubah Tempat Bazaar</label>
-                                                <input type="text" class="form-control fw-medium" id="inputLocation" name="location" placeholder="Masukkan Lokasi Bazaar" value="{{ $bazaar->location }}" required>
+                                                <input type="text" class="form-control fw-medium" id="inputLocation" name="location" placeholder="Masukkan Lokasi Bazaar" value="{{ $item->location }}" required>
                                                 <small class="text-danger">
                                                 @foreach ($errors->get('location') as $err)
                                                     @if ($loop->iteration > 1)
@@ -87,7 +87,7 @@
                                             </div>
                                             <div class="mb-3 mt-4">
                                                 <label for="inputPriceEstimation" class="mb-2 fw-semibold">Ubah Estimasi Harga</label>
-                                                <input class="form-control fw-medium" id="inputPriceEstimation" name="price_estimation" placeholder="Masukkan Estimasi Harga" value="{{ $bazaar->price_estimation }}" required>
+                                                <input class="form-control fw-medium" id="inputPriceEstimation" name="price_estimation" placeholder="Masukkan Estimasi Harga" value="{{ $item->price_estimation }}" required>
                                                 <small class="text-danger">
                                                 @foreach ($errors->get('price_estimation') as $err)
                                                     @if ($loop->iteration > 1)
@@ -101,7 +101,7 @@
                                                 <label for="inputStartsFrom" class="mb-2 fw-semibold">Tanggal Mulai</label>
                                                 <input id="date1" type="date"
                                                             class="form-control fw-medium"
-                                                            name="starts_from" value="{{ $bazaar->starts_from }}" placeholder="mm/dd/yyyy" required>
+                                                            name="starts_from" value="{{ $item->starts_from }}" placeholder="mm/dd/yyyy" required>
                                                 <small class="text-danger">
                                                 @foreach ($errors->get('starts_from') as $err)
                                                     @if ($loop->iteration > 1)
@@ -115,7 +115,7 @@
                                                 <label for="inputEndsAt" class="mb-2 fw-semibold">Tanggal Akhir</label>
                                                 <input id="date1" type="date"
                                                             class="form-control fw-medium"
-                                                            name="ends_at" placeholder="mm/dd/yyyy" value="{{ $bazaar->ends_at }}" required>
+                                                            name="ends_at" placeholder="mm/dd/yyyy" value="{{ $item->ends_at }}" required>
                                                 <small class="text-danger">
                                                 @foreach ($errors->get('ends_at') as $err)
                                                     @if ($loop->iteration > 1)
@@ -127,7 +127,7 @@
                                             </div>
                                             <div class="mb-3 mt-4">
                                                 <label for="inputSlot" class="mb-2 fw-semibold">Slot</label>
-                                                <input type="number" class="form-control fw-medium" id="inputSlot" name="slot" placeholder="Masukkan Slot" value="{{ $bazaar->slot }}" required>
+                                                <input type="number" class="form-control fw-medium" id="inputSlot" name="slot" placeholder="Masukkan Slot" value="{{ $item->slot }}" required>
                                                 <small class="text-danger">
                                                 @foreach ($errors->get('slot') as $err)
                                                     @if ($loop->iteration > 1)
