@@ -73,6 +73,8 @@ Route::get('/joinbazaar', function () {
 // })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/logout', [ProfileController::class, 'logout']);
+Route::post('/updateuser', [ProfileController::class, 'updateuser']);
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
