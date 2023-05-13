@@ -69,7 +69,8 @@
                     <p class="fw-medium fs-5 ms-5 fw-semibold"><?= $tenant['username'] ?></p>
                     <p class="fw-medium fs-5 ms-5"><?= $tenant['activity_detail'] ?></p>
                     <a href="{{ asset('storage/' . $tenant->mou) }}"></a>
-
+                    <a href="{{ asset('storage/' . $tenant->payment_prove) }}"></a>
+                    
                     @auth
                         @if (auth()->user()->role == 'Host')
                             <form action="/updatetenants" method="post" enctype="multipart/form-data">
