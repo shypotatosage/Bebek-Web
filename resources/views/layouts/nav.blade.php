@@ -35,6 +35,11 @@
                 @endguest
 
                 @auth
+                @if (Auth::check() && Auth::user()->role == 'Admin')
+                <li class="nav-item">
+                    <a class="nav-link py-2 px-4" href="/admin">Admin Panel</a>
+                </li>
+                @endif
                 <li class="nav-item">
                     <a class="nav-link py-2 px-4" href="/profile">Profile</a>
                 </li>
