@@ -84,7 +84,7 @@ class BazaarController extends Controller
         $params = array(
             'transaction_details' => array(
                 'order_id' => $bazaar->id,
-                'gross_amount' => 5000,
+                'gross_amount' => 50000,
             ),
             'customer_details' => array(
                 'name' => Auth::user()->name,
