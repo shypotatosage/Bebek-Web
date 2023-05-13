@@ -23,17 +23,64 @@ class BazaarResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('name')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\Textarea::make('description')
+                    ->required(),
+                Forms\Components\TextInput::make('location')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('price_estimation')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\DatePicker::make("starts_from")
+                    ->required(),
+                Forms\Components\DatePicker::make("ends_at")
+                    ->required(),
+                // Forms\Components\Textarea::make('description')
+                //     ->required(),
+                Forms\Components\TextInput::make('slot')
+                    ->numeric()
+                    ->required()
+                    ->maxLength(255),
+                // Forms\Components\Textarea::make('logo')
+                //     ->required(),
+                
+                // Form Input?
             ]);
     }
+
+// bazaar id
+// name
+// description
+// location
+// price_estimation
+// starts_from
+// ends_at
+// syarat_dan_ketentuan
+// slot
+// logo
+// user_ id
 
     public static function table(Table $table): Table
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('name')->searchable(),
-                Tables\Columns\TextColumn::make('description')->searchable(),
-                Tables\Columns\TextColumn::make('location'),
+                Tables\Columns\TextColumn::make('name')
+                    ->sortable()
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('description')
+                    ->limit(25)
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('location')
+                    ->sortable()
+                    ->limit(30),
+                Tables\Columns\TextColumn::make('price_estimation')
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('starts_from'),
+                Tables\Columns\TextColumn::make('ends_at'),
+                Tables\Columns\TextColumn::make('slot'),
             ])
             ->filters([
                 //
