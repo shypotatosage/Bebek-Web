@@ -18,7 +18,7 @@ class Controller extends BaseController
         $items = Bazaar::select('bazaars.*', DB::raw('COUNT(bazaar_tenants.id) AS num_attendees'))
         ->leftJoin('bazaar_tenants', 'bazaars.id', '=', 'bazaar_tenants.bazaar_id')
         ->groupBy('bazaars.id', 'bazaars.name', 'bazaars.created_at', 'bazaars.updated_at', 'bazaars.description', 'bazaars.location', 'bazaars.price_estimation'
-        ,'bazaars.starts_from','bazaars.ends_at','bazaars.syarat_ketentuan','bazaars.slot','bazaars.logo', 'bazaars.user_id')
+        ,'bazaars.starts_from','bazaars.ends_at','bazaars.syarat_ketentuan','bazaars.slot','bazaars.logo', 'bazaars.user_id', 'bazaars.payment')
         ->orderBy('bazaars.id')
         ->limit(8)
         ->get();
