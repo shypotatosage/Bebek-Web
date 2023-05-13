@@ -17,10 +17,10 @@ class UserSeeder extends Seeder
         User::create(
             [
                 'name' => 'IMT_SU',
-                'email' => "tes@gmail.com",
+                'email' => "imtsu123@gmail.com",
                 'bank_type_id' => '2',
-                'phone_number' =>"082236697711",
-                'bank_account_number' =>"0836697711",
+                'phone_number' =>"0822366979120",
+                'bank_account_number' =>"083669771190",
                 'password'=>Hash::make("tes123"),
                 'profile_picture' =>"profile.png",
                 'role'=>"Tenant",
@@ -30,9 +30,9 @@ class UserSeeder extends Seeder
             [
                 'name' => 'PATRIA',
                 'bank_type_id' => '1',
-                'email' => "tes2@gmail.com",
-                'phone_number' =>"081231212",
-                'bank_account_number' =>"08697711",
+                'email' => "patria@gmail.com",
+                'phone_number' =>"081231212123",
+                'bank_account_number' =>"0869771291",
                 'password'=>Hash::make("tes123"),
                 'profile_picture' =>"profile.png",
                 'role'=>"Host",
@@ -41,10 +41,10 @@ class UserSeeder extends Seeder
         User::create(
             [
                 'name' => 'UCDC',
-                'email' => "tes3@gmail.com",
-                'phone_number' =>"08223697711",
+                'email' => "ucdc@gmail.com",
+                'phone_number' =>"08225697711",
                 'bank_type_id' => '3',
-                'bank_account_number' =>"083669771",
+                'bank_account_number' =>"08366977110",
                 'password'=>Hash::make("tes123"),
                 'profile_picture' =>"profile.png",
                 'role'=>"Host",
@@ -53,11 +53,11 @@ class UserSeeder extends Seeder
         User::create(
             [
                 'name' => 'ISB_SU',
-                'email' => "tes4@gmail.com",
+                'email' => "isbsu@gmail.com",
                 'bank_type_id' => '1',
-                'bank_account_number' =>"083669711",
+                'bank_account_number' =>"08366971179",
                 'password'=>Hash::make("tes123"),
-                'phone_number' =>"697711",
+                'phone_number' =>"697711123232",
                 'profile_picture' =>"697711",
                 'role'=>"Host",
             ]
@@ -65,10 +65,10 @@ class UserSeeder extends Seeder
         User::create(
             [
                 'name' => 'Oweekucs',
-                'email' => "te5s@gmail.com",
+                'email' => "oweekucs@gmail.com",
                 'bank_type_id' => '1',
                 'phone_number' =>"082711",
-                'bank_account_number' =>"083669711",
+                'bank_account_number' =>"08366971124",
                 'password'=>Hash::make("tes123"),
                 'profile_picture' =>"profile.png",
                 'role'=>"Admin",
