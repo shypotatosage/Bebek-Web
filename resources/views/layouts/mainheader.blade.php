@@ -25,7 +25,7 @@
         @yield('title')
     </title>
 </head>
-<body style="background-color: #FAFAFA;" id="download">
+<body style="background-color: #FAFAFA;" id="download" class="pb-5 mb-4">
     @include('layouts.nav')
         @yield('content')
 

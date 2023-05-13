@@ -4,6 +4,16 @@
     font-family: 'Nunito Sans', sans-serif;
 }
 
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
+  }
+
 .nav-item>a:hover {
     color: #19A7CE;
 }

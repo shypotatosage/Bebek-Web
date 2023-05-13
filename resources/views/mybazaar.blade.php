@@ -9,7 +9,7 @@
             <h2 class="pt-4 text-center w-100 fw-bold">Bazaars I Applied To</h2>
             
             @if (count($bazaars) == 0)
-                <div class="w-100 py-5">
+                <div class="w-100 py-5 my-5">
                     <div class="py-5 text-center w-100 my-5">
                         <h3 class="fw-medium py-5 my-5">You haven't applied to any Bazaars yet</h3>
                     </div>
@@ -35,10 +35,13 @@
                 </div>
             @endif
         @else
-            <h2 class="pt-4 text-center w-100 fw-bold">Bazaar List</h2>
+            <div class="d-flex justify-content-between align-items-center">
+                <h2 class="pt-4 fw-bold">Bazaar List</h2>
+                <a href="/create-bazaar"><button class="btn btn-primary">Create Bazaar</button></a>
+            </div>
             
             @if (count($bazaars) == 0)
-                <div class="w-100 py-5">
+                <div class="w-100 py-5 my-5">
                     <div class="py-5 text-center w-100 my-5">
                         <h3 class="fw-medium py-5 my-5">You haven't owned any Bazaars yet</h3>
                     </div>

@@ -32,15 +32,41 @@ class BazaarController extends Controller
      */
     public function create()
     {
-        //
+        return view('createbazaar');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreBazaarRequest $request)
+    public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'user_id' => 'required',
+            'name' => 'required',
+            'description' => 'required',
+            'location' => 'required',
+            'price_estimation' => 'required',
+            'starts_from' => 'required|date|after:now',
+            'ends_at' => 'required|date|after_or_equal:starts_from',
+            'syarat_ketentuan' => 'required',
+            'slot' => 'required',
+            'logo' => 'required',
+        ]);
+
+        Bazaar::create([
+            'user_id' => $request->user_id,
+            'name' => $request->name,
+            'description' => $request->description,
+            'location' => $request->location,
+            'price_estimation' => $request->price_estimation,
+            'starts_from' => $request->starts_from,
+            'ends_at' => $request->ends_at,
+            'slot' => $request->slot,
+            'syarat_ketentuan' => $request->file('syarat_ketentuan')->store('syarat_ketentuan'),
+            'logo' => $request->file('logo')->store('logo'),
+        ]);
+
+        return redirect('/');
     }
 
     /**

@@ -11,14 +11,9 @@
                 <li class="nav-item active">
                     <a class="nav-link py-2 px-4" href="/">Bazaars</a>
                 </li>
-                @if (Auth::check() && Auth::user()->role == 'Host')
+                @if (Auth::check() && Auth::user()->role != 'Admin')
                     <li class="nav-item active">
-                        <a class="nav-link py-2 px-4" href="/ownedbazaar">My Bazaars</a>
-                    </li>
-                @endif
-                @if (Auth::check() && Auth::user()->role == 'Tenant')
-                    <li class="nav-item active">
-                        <a class="nav-link py-2 px-4" href="/ownedtenant">My Tenants</a>
+                        <a class="nav-link py-2 px-4" href="/my-bazaar">My Bazaars</a>
                     </li>
                 @endif
                 <li class="nav-item">
