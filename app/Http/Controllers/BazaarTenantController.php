@@ -3,11 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Bazaar;
-use App\Http\Requests\StoreBazaarRequest;
-use App\Http\Requests\UpdateBazaarRequest;
+use App\Models\BazaarTenant;
 use Illuminate\Http\Request;
 
-class BazaarController extends Controller
+class BazaarTenantController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,15 +19,17 @@ class BazaarController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        return view('joinbazaar', [
+            'bazaar' => Bazaar::findOrFail($request->id),
+        ]);
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreBazaarRequest $request)
+    public function store(Request $request)
     {
         //
     }
@@ -36,7 +37,7 @@ class BazaarController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Bazaar $bazaar)
+    public function show(BazaarTenant $bazaarTenant)
     {
         //
     }
@@ -44,7 +45,7 @@ class BazaarController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Bazaar $bazaar)
+    public function edit(BazaarTenant $bazaarTenant)
     {
         //
     }
@@ -52,7 +53,7 @@ class BazaarController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateBazaarRequest $request, Bazaar $bazaar)
+    public function update(Request $request, BazaarTenant $bazaarTenant)
     {
         //
     }
@@ -60,7 +61,7 @@ class BazaarController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Bazaar $bazaar)
+    public function destroy(BazaarTenant $bazaarTenant)
     {
         //
     }

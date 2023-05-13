@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Bazaar;
-use App\Http\Requests\StoreBazaarRequest;
-use App\Http\Requests\UpdateBazaarRequest;
+use App\Models\BankType;
 use Illuminate\Http\Request;
 
-class BazaarController extends Controller
+class BankTypeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -28,7 +26,7 @@ class BazaarController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreBazaarRequest $request)
+    public function store(Request $request)
     {
         //
     }
@@ -36,7 +34,7 @@ class BazaarController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Bazaar $bazaar)
+    public function show(BankType $bankType)
     {
         //
     }
@@ -44,7 +42,7 @@ class BazaarController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Bazaar $bazaar)
+    public function edit(BankType $bankType)
     {
         //
     }
@@ -52,7 +50,7 @@ class BazaarController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateBazaarRequest $request, Bazaar $bazaar)
+    public function update(Request $request, BankType $bankType)
     {
         //
     }
@@ -60,7 +58,7 @@ class BazaarController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Bazaar $bazaar)
+    public function destroy(BankType $bankType)
     {
         //
     }

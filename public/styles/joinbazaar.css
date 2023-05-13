@@ -3,3 +3,9 @@
 * {
     font-family: 'Nunito Sans', sans-serif;
 }
+
+.bazaar-logo {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+}
