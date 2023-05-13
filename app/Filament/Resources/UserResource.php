@@ -31,28 +31,22 @@ class UserResource extends Resource
                     ->required()
                     ->maxLength(255),
                 Forms\Components\TextInput::make('phone_number')
-                    ->required()
                     ->maxLength(255),
                 Forms\Components\TextInput::make('bank_number')
-                    ->required()
                     ->maxLength(255),
                 Forms\Components\TextInput::make('bank_type_id')
-                    ->required()
                     ->maxLength(255),
                 Forms\Components\TextInput::make('password')
                     ->password()
                     ->required()
                     ->maxLength(255),
                 Forms\Components\TextInput::make('profile_picture')
-                    ->required()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('role')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('status')
-                    ->datalist([
-                        1,
-                        0,
+                Forms\Components\Select::make('role')
+                    ->options([
+                        "Host",
+                        "Tenant",
+                        "Admin"
                     ]),
                 Forms\Components\Select::make('status')
                     ->options([
@@ -60,7 +54,7 @@ class UserResource extends Resource
                         '0' => 'Banned',
                     ])
                 
-//                     name
+// name
 // email
 // phone_number
 // bank_number

@@ -23,15 +23,41 @@ class BazaarTenantResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('user_id'),
+                Forms\Components\TextInput::make('bazaar_id'),
+                Forms\Components\TextInput::make('activity'),
+                Forms\Components\TextArea::make('activity_detail'),
+                Forms\Components\TextInput::make('mou'),
+                Forms\Components\TextInput::make('payment_prove'),
+                Forms\Components\Select::make('status')
+                    ->options([
+                        "accepted",
+                        "pending",
+                        "rejected"
+                    ]),
             ]);
     }
 
+    // user id
+    // bazaar_id
+    // activity
+    // activity_ detail
+    // mou
+    // payment_prove
+    // status
+    
     public static function table(Table $table): Table
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('user_id'),
+                Tables\Columns\TextColumn::make('bazaar_id'),
+                Tables\Columns\TextColumn::make('activity'),
+                Tables\Columns\TextColumn::make('activity_detail')
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('mou'),
+                Tables\Columns\TextColumn::make('payment_prove'),
+                Tables\Columns\TextColumn::make('status'),
             ])
             ->filters([
                 //
