@@ -8,6 +8,7 @@
   align-items: flex-start;
   flex-direction: column;
   justify-content: flex-start;
+  border-radius: 10px;
 }
 
 .feature-card1-feature-card:hover {
@@ -38,13 +39,6 @@ hr {
   margin: auto;
 }
 
-
-
-
-
-
-
-
 .home-container {
   width: 100%;
   display: flex;
@@ -61,23 +55,13 @@ hr {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-}
-
-.home-banner {
-  position: absolute;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  padding-top: 192px;
-  padding-left: 48px;
-  padding-right: 48px;
-  flex-direction: column;
-  padding-bottom: 128px;
   background-size: cover;
   justify-content: space-between;
   background-image: url('https://cdn.timesmedia.co.id/images/2021/12/08/Batu-Street-Food-Festival.jpg');
   background-position: center;
-  opacity: 20%;
+  background-blend-mode: lighten;
+  background-color: rgba(255,255,255,0.75);
+  color: #000000;
 }
 
 .banner-spacer {
@@ -101,12 +85,14 @@ hr {
   margin-bottom: 48px;
   letter-spacing: 2px;
   text-transform: uppercase;
+  opacity: 100% !important;
 }
 
 .home-text1 {
   font-size: 3rem;
   text-align: center;
   margin-bottom: 16px;
+  opacity: 100% !important;
 }
 
 .home-container2 {

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Bazaar;
 use App\Models\BazaarTenant;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -25,6 +26,11 @@ class BazaarTenantController extends Controller
         $bazaar = Bazaar::findOrFail($request->id);
 
         if (count(BazaarTenant::where('bazaar_id', '=', $bazaar->id)->get()) < $bazaar->slot) {
+            $bazaar->status = "Available";
+    
+            $bazaar->starts_from = Carbon::parse($bazaar->starts_from)->locale('id-ID')->translatedFormat('d F Y');
+            $bazaar->ends_at = Carbon::parse($bazaar->ends_at)->locale('id-ID')->translatedFormat('d F Y');
+
             return view('joinbazaar', [
                 'bazaar' => $bazaar,
             ]);

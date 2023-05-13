@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Bazaar;
 use App\Http\Requests\StoreBazaarRequest;
 use App\Http\Requests\UpdateBazaarRequest;
+use App\Models\BazaarTenant;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class BazaarController extends Controller
 {
@@ -14,7 +16,15 @@ class BazaarController extends Controller
      */
     public function index()
     {
-        //
+        if (Auth::user()->role == "Tenant") {
+            return view('mybazaar', [
+                'bazaars' => BazaarTenant::where('user_id', '=', Auth::id())->get()
+            ]);
+        } else {
+            return view('mybazaar', [
+                'bazaars' => Bazaar::where('user_id', '=', Auth::id())->get()
+            ]);
+        }
     }
 
     /**

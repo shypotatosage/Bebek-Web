@@ -61,6 +61,20 @@
                     @endforeach
                     </small>
                 </div>
+                <div class="mb-3">
+                    <select name="role" class="form-select  fw-medium" id="selectRole">
+                        <option value="Tenant" class=" fw-medium">Tenant</option>
+                        <option value="Host" class=" fw-medium">Host</option>
+                    </select>
+                    <small class="text-danger">
+                        @foreach ($errors->get('role') as $err)
+                            @if ($loop->iteration > 1)
+                                <br/>
+                            @endif
+                            {{ ucfirst($err) }}
+                        @endforeach
+                    </small>
+                </div>
                 <div class="mb-3 mt-4">
                     <input type="password" class="form-control" id="inputPassword" name="password" placeholder="Kata Sandi" required autocomplete="new-password">
                     <small class="text-danger">

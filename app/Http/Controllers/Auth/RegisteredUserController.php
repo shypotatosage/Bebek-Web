@@ -35,6 +35,7 @@ class RegisteredUserController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
             'phone_number' => ['required', 'numeric', 'unique:'.User::class],
             'bank_account_number' => ['required', 'numeric', 'unique:'.User::class],
+            'role' => ['required', 'in:Tenant,Host'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
@@ -43,7 +44,7 @@ class RegisteredUserController extends Controller
             'email' => $request->email,
             'phone_number' => $request->phone_number,
             'bank_account_number' => $request->bank_account_number,
-            'role' => 'User',
+            'role' => $request->role,
             'profile_picture' => 'defaultprofilepicture.jpg',
             'password' => Hash::make($request->password),
         ]);

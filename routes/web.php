@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BazaarController;
 use App\Http\Controllers\BazaarTenantController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\ProfileController;
@@ -55,6 +56,8 @@ Route::get('/about', function () {
 Route::get('/bazaardetail', function () {
     return view('bazaardetail');
 });
+
+Route::get('/my-bazaar', [BazaarController::class, 'index'])->middleware(['auth', 'verified']);
 
 Route::get('/joinbazaar', function () {
     return view('joinbazaar');

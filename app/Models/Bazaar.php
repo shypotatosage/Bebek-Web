@@ -20,4 +20,8 @@ class Bazaar extends Model
         'slot',
         'logo',
     ];
+
+    public function bazaar_tenants(){
+        return $this->hasMany(BazaarTenant::class);
+    }
 }

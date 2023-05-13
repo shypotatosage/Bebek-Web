@@ -27,13 +27,12 @@
 </head>
 <body style="background-color: #FAFAFA;" id="download">
     @include('layouts.nav')
-    <div class="">
         @yield('content')
-    </div>
+
     <footer>
         @include('layouts.footer')
     </footer>
-    </body>
+</body>
 
 <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
