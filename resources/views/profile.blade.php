@@ -41,7 +41,7 @@
                         </div>
                         <div class="modal-body">
                             <label for="category">Email</label>
-                            <input type="text" class="form-control" id="category" value="{{ $user->name }}"
+                            <input type="email" class="form-control" id="category" value="{{ $user->email }}"
                                 name="email" required>
                             <label for="phone">Phone number</label>
                             <input type="text" class="form-control" id="phone" value="{{ $user->phone_number }}"
@@ -55,7 +55,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                            <button type="submit" class="btn btn-success">Add</button>
+                            <button type="submit" class="btn btn-warning">Edit</button>
                         </div>
                     </form>
                 </div>
