@@ -15,11 +15,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('joinbazaar');
+    return view('auth.login');
 });
 
-Route::get('/login', function () {
-    return view('auth.login');
+Route::get('/contact', function () {
+    return view('support');
+});
+
+Route::get('/about', function () {
+    return view('aboutus');
 });
 
 Route::get('/dashboard', function () {

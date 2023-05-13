@@ -1,0 +1,9 @@
+.flex-container {
+    display: flex;
+  }
+
+  .img-us {
+    padding: 5px;
+    width: 500px;
+    
+  }
