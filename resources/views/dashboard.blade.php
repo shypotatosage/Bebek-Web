@@ -47,7 +47,7 @@
                 <h3 class="feature-card1-text"><span><?=$item["name"]?></span></h3>
                 <hr>
                 <h4 class="card-text"><span><?=$item["starts_from"]?></span></h4>
-                <h4 class="card-text"><span><?=$item["status"]?> 
+                <h4 class="card-text"><span>Num:<?=$item["num_attendees"]?>/Slot:<?=$item["slot"]?>
                 </span></h4>
               </div>
             @endforeach
