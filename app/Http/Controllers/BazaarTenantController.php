@@ -85,7 +85,30 @@ class BazaarTenantController extends Controller
      */
     public function update(Request $request, BazaarTenant $bazaarTenant)
     {
-        //
+        if(isset($_POST['acc'])){
+            $Item = BazaarTenant::findOrFail($_POST['id_btenant']);
+
+            $Item->update([
+                'status' => "accepted",
+            ]);
+        }
+
+        if(isset($_POST['rej'])){
+            $Item = BazaarTenant::findOrFail($_POST['id_btenant']);
+
+            $Item->update([
+                'status' => "rejected",
+            ]);
+        }
+
+        if(isset($_POST['change'])){
+            $Item = BazaarTenant::findOrFail($_POST['id_btenant']);
+
+            $Item->update([
+                'status' => "pending",
+            ]);
+        }
+        return redirect()->back();
     }
 
     /**

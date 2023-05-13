@@ -29,6 +29,8 @@ Route::get('/join-bazaar/{id}', [BazaarTenantController::class, 'create'])->midd
 Route::post('/join-bazaar', [BazaarTenantController::class, 'store'])->middleware(['auth', 'verified']);
 Route::get('/bazaar-details/{id}', [Controller::class, 'bazaardetauls'])->name('bazaar-details');
 
+Route::post('/updatetenants', [BazaarTenantController::class, 'update'])->middleware(['auth', 'verified']);
+
 Route::get('/login', function () {
     return view('auth.login');
 });

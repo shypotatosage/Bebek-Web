@@ -17,7 +17,7 @@
                             @if (count($tenants)>=$item["slot"])
                             FULL
                             @else
-                            Available : <?=$item["slot"]-count($tenants)?> Slots
+                            Available : <?=$item["slot"]-count($count)?> Slots
                             @endif
                         </p>
                     </div>
@@ -28,11 +28,17 @@
                     @if (auth()->user()->role == "Host")
                         <button type="submit" style="background-color:#cf3e12;" class="btn btn-secondary font-montserrat fw-semibold py-2 px-4 mt-2 px-5">Remove</button>
                     @else
-                        @if (count($tenants)>=$item["slot"])
+                    
+                        @if (count($count)>=$item["slot"])
                         <button type="submit" style="background-color:#2B2D42;" class="btn btn-secondary font-montserrat fw-semibold py-2 px-4 mt-2 px-5" disabled>Daftar</button>
                         @else
-                        <button type="submit" style="background-color:#2B2D42;" class="btn btn-secondary font-montserrat fw-semibold py-2 px-4 mt-2 px-5">Daftar</button>
+                        <form action="/join-bazaar/<?=$item['id']?>" method="get">
+                            <button type="submit" style="background-color:#2B2D42;" class="btn btn-secondary font-montserrat fw-semibold py-2 px-4 mt-2 px-5">Daftar</button>
+                        </a>
+                        
                          @endif
+                    
+                       
                     @endif
 
 
@@ -42,25 +48,34 @@
             @php
                 $i = 1;
             @endphp
-            @foreach ($tenants as $tenant)
+            @foreach ($count as $tenant)
                 <div class="flex-container pb-4  w-100" style="display: flex;">
                     <p class="fw-medium fs-5 fw-bold"><?=$i?></p>
                     <p class="fw-medium fs-5 ms-5 fw-semibold"><?=$tenant['username']?></p>
                     <p class="fw-medium fs-5 ms-5"><?=$tenant['activity_detail']?></p>
-                </div>
-                <form >
-                </form>
-                @if (auth()->user()->role == "Host")
-                    @if ($tenant['status'] == "pending")
-                    <button type="submit" style="background-color:#12cf12;" class="btn btn-secondary font-montserrat fw-semibold py-2 px-4 mt-2 px-5">Accept</button> 
-                    @else
-                    <button type="submit" style="background-color:#cf3e12;" class="btn btn-secondary font-montserrat fw-semibold py-2 px-4 mt-2 px-5">Reject</button>   
+                
+                @auth
+                    @if (auth()->user()->role == "Host")
+                        <form action="/updatetenants" method="post" enctype="multipart/form-data">
+                            @csrf
+                            <input type="hidden" name="id_btenant" value="{{ $tenant['id'] }}">
+                            <input type="hidden" name="id_bazaar" value="{{ $item['id'] }}">
+
+                        @if ($tenant['status'] == "pending")
+                            <button type="submit" style="background-color:#12cf12;" name="acc" value="acc" class="btn btn-secondary font-montserrat fw-semibold py-2 px-4 mt-2 px-5 fs-5 ms-5">Accept</button> 
+                            <button type="submit" style="background-color:#cf1812;" name="rej" value="rej" class="btn btn-secondary font-montserrat fw-semibold py-2 px-4 mt-2 px-5 fs-5 ms-5">Reject</button> 
+                        @else
+                            @if ($tenant['status'] == "accepted")
+                                <input type="hidden" name="change" value="change">
+                                <button type="submit" style="background-color:#cf1812;" class="btn btn-secondary font-montserrat fw-semibold py-2 px-4 mt-2 px-5 fs-5 ms-5">Cancel</button> 
+                            @endif
+                        @endif
+                        </form>
                     @endif
-                @endif
-                @php
-                    $i++;
-                @endphp
+                @endauth   
+            </div>
             @endforeach
+            
             {{-- <h3 class="fw-bold mb-5">Tenant Available</h3>
             <div class="flex-container pb-4  w-100" style="display: flex;">
                 <p class="fw-medium fs-5 fw-bold">1</p>

@@ -37,13 +37,21 @@ class Controller extends BaseController
 
         $bazaarTenants = BazaarTenant::select('bazaar_tenants.*', 'users.name as username')
               ->where('bazaar_id', $id)
+              ->whereNotIn('bazaar_tenants.status', ["rejected"])
+              ->join('users', 'bazaar_tenants.user_id', '=', 'users.id')
+              ->get();
+
+        $realtenants_count = BazaarTenant::select('bazaar_tenants.*', 'users.name as username')
+              ->where('bazaar_id', $id)
+              ->where('bazaar_tenants.status', "accepted")
               ->join('users', 'bazaar_tenants.user_id', '=', 'users.id')
               ->get();
 
         return view('bazaardetail', [
             'pagetitle' => 'Catalog',
             'items' => $items,
-            'tenants' => $bazaarTenants
+            'tenants' => $bazaarTenants,
+            'count' => $realtenants_count
         ]);
     }
 }
