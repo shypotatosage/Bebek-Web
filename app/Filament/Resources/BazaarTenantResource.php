@@ -10,6 +10,7 @@ use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
+use Filament\Forms\Components\Card;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
@@ -23,18 +24,29 @@ class BazaarTenantResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('user_id'),
-                Forms\Components\TextInput::make('bazaar_id'),
-                Forms\Components\TextInput::make('activity'),
-                Forms\Components\TextArea::make('activity_detail'),
-                Forms\Components\TextInput::make('mou'),
-                Forms\Components\TextInput::make('payment_prove'),
-                Forms\Components\Select::make('status')
-                    ->options([
-                        "accepted",
-                        "pending",
-                        "rejected"
-                    ]),
+                Card::make()->schema([
+                    Forms\Components\TextInput::make('user_id'),
+                    Forms\Components\TextInput::make('bazaar_id'),
+                    Forms\Components\TextInput::make('activity'),
+                    Forms\Components\TextArea::make('activity_detail'),
+                    Forms\Components\FileUpload::make('mou')
+                        ->acceptedFileTypes(['application/pdf'])
+                        ->preserveFilenames()
+                        ->maxSize(2048)
+                        ->dehydrated(fn ($state) => filled($state)),
+                    Forms\Components\FileUpload::make('payment_prove')
+                        ->image()
+                        ->preserveFilenames()
+                        ->maxSize(2048)
+                        ->dehydrated(fn ($state) => filled($state)),
+                    Forms\Components\Select::make('status')
+                        ->options([
+                            "accepted" => "Accepted",
+                            "pending" => "Pending",
+                            "rejected" => "Rejected"
+                        ])
+                        ->default('pending'),
+                ])
             ]);
     }
 
@@ -55,8 +67,10 @@ class BazaarTenantResource extends Resource
                 Tables\Columns\TextColumn::make('activity'),
                 Tables\Columns\TextColumn::make('activity_detail')
                     ->sortable(),
-                Tables\Columns\TextColumn::make('mou'),
-                Tables\Columns\TextColumn::make('payment_prove'),
+                Tables\Columns\TextColumn::make('mou')
+                    ->limit(15),
+                Tables\Columns\TextColumn::make('payment_prove')
+                    ->limit(15),
                 Tables\Columns\TextColumn::make('status'),
             ])
             ->filters([

@@ -10,8 +10,10 @@ use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
+use Filament\Forms\Components\Card;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Support\Facades\Hash;
 
 class UserResource extends Resource
 {
@@ -23,7 +25,8 @@ class UserResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name')
+                Card::make()->schema([
+                    Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(255),
                 Forms\Components\TextInput::make('email')
@@ -38,22 +41,25 @@ class UserResource extends Resource
                     ->maxLength(255),
                 Forms\Components\TextInput::make('password')
                     ->password()
-                    ->required()
-                    ->maxLength(255),
+                    // ->disabled(fn (string $context): bool => $context === 'edit')
+                    ->afterStateHydrated(fn ($state) => Hash::make($state))
+                    ->dehydrateStateUsing(fn ($state) => Hash::make($state))
+                    ->dehydrated(fn ($state) => filled($state))
+                    ->required(fn (string $context): bool => $context === 'create'),
                 Forms\Components\TextInput::make('profile_picture')
                     ->maxLength(255),
                 Forms\Components\Select::make('role')
                     ->options([
-                        "Host",
-                        "Tenant",
-                        "Admin"
+                        "Host" => "Host",
+                        "Tenant" => "Tenant",
+                        "Admin" => "Admin"
                     ]),
                 Forms\Components\Select::make('status')
                     ->options([
                         '1' => 'Active',
                         '0' => 'Banned',
                     ])
-                
+                ]) 
 // name
 // email
 // phone_number
