@@ -85,10 +85,7 @@
                 @endforeach
                 </small>
             </div>
-            
+
         </form>
     </div>
 @endsection
-<script>
-    $('#date1').datepicker();
-</script>

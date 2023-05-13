@@ -16,8 +16,6 @@ class ProfileController extends Controller
     {
         $user = $request->user();
 
-        // $user =  DB::select("SELECT `id`, `name`, `email`, `email_verified_at`, `password`, `profile_picture`, `status`, `user_status`, `remember_token`, `created_at`, `updated_at` FROM `users` where id='$user->id'");
-        
         $user = User::findOrFail($user->id);
         return view('profile', [
             'title' => 'Profile',

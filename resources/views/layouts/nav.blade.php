@@ -9,8 +9,18 @@
         <div class="collapse navbar-collapse flex-grow-0" id="navbarNav">
             <ul class="navbar-nav text-center">
                 <li class="nav-item active">
-                    <a class="nav-link py-2 px-4" href="/bazaars">My Bazaars</a>
+                    <a class="nav-link py-2 px-4" href="/">Bazaars</a>
                 </li>
+                @if (Auth::check() && Auth::user()->role == 'Host')
+                    <li class="nav-item active">
+                        <a class="nav-link py-2 px-4" href="/ownedbazaar">My Bazaars</a>
+                    </li>
+                @endif
+                @if (Auth::check() && Auth::user()->role == 'Tenant')
+                    <li class="nav-item active">
+                        <a class="nav-link py-2 px-4" href="/ownedtenant">My Tenants</a>
+                    </li>
+                @endif
                 <li class="nav-item">
                     <a class="nav-link py-2 px-4" href="/about">About</a>
                 </li>

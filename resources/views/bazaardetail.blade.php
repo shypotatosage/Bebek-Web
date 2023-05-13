@@ -5,6 +5,7 @@
 @section('title', 'Pendaftaran Bazaar')
 
 @section('content')
+
     @foreach ($items as $item)
         <div class="container mt-5">
             <div class="d-flex flex-column flex-md-row align-items-center justify-content-center justify-content-md-start pb-md-5 pb-3">
@@ -33,6 +34,7 @@
                         <button type="submit" style="background-color:#2B2D42;" class="btn btn-secondary font-montserrat fw-semibold py-2 px-4 mt-2 px-5">Daftar</button>
                          @endif
                     @endif
+
 
                     {{-- </form> --}}
                 </div>
@@ -79,3 +81,6 @@
     @endforeach
     
 @endsection
+<footer>
+    @include('layouts.footer')
+</footer>
