@@ -25,21 +25,23 @@
                     <p class="fw-medium fs-5"><?=$item['location']?></p>
                     <p class="fw-medium fs-5"><?=$item['price_estimation']?></p>
                     {{-- <form action="{{ route('bazaars.show', $bazaar->id) }}" method="GET" class="me-3 mt-2 mt-md-0 mb-4 mb-md-0"> --}}
+                    @auth
                     @if (auth()->user()->role == "Host")
                         <button type="submit" style="background-color:#cf3e12;" class="btn btn-secondary font-montserrat fw-semibold py-2 px-4 mt-2 px-5">Remove</button>
-                    @else
-                    
-                        @if (count($count)>=$item["slot"])
-                        <button type="submit" style="background-color:#2B2D42;" class="btn btn-secondary font-montserrat fw-semibold py-2 px-4 mt-2 px-5" disabled>Daftar</button>
                         @else
-                        <form action="/join-bazaar/<?=$item['id']?>" method="get">
-                            <button type="submit" style="background-color:#2B2D42;" class="btn btn-secondary font-montserrat fw-semibold py-2 px-4 mt-2 px-5">Daftar</button>
-                        </a>
                         
-                         @endif
-                    
-                       
-                    @endif
+                            @if (count($count)>=$item["slot"])
+                            <button type="submit" style="background-color:#2B2D42;" class="btn btn-secondary font-montserrat fw-semibold py-2 px-4 mt-2 px-5" disabled>Daftar</button>
+                            @else
+                            <form action="/join-bazaar/<?=$item['id']?>" method="get">
+                                <button type="submit" style="background-color:#2B2D42;" class="btn btn-secondary font-montserrat fw-semibold py-2 px-4 mt-2 px-5">Daftar</button>
+                            </a>
+                            
+                            @endif
+                        
+                        
+                        @endif
+                    @endauth
 
 
                     {{-- </form> --}}

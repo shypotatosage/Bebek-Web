@@ -16,9 +16,14 @@ class BazaarController extends Controller
      */
     public function index()
     {
+        $id = Auth::id();
+        $bazaarTenants = BazaarTenant::select('bazaar_tenants.*', 'bazaars.name')
+            ->join('bazaars', 'bazaars.id', '=', 'bazaar_tenants.bazaar_id')
+            ->where('bazaar_tenants.user_id', '=', $id)
+            ->get();
         if (Auth::user()->role == "Tenant") {
             return view('mybazaar', [
-                'bazaars' => BazaarTenant::where('user_id', '=', Auth::id())->get()
+                'bazaars' => $bazaarTenants
             ]);
         } else {
             return view('mybazaar', [
