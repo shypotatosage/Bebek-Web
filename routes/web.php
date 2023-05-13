@@ -29,6 +29,7 @@ Route::get('/join-bazaar/{id}', [BazaarTenantController::class, 'create'])->midd
 Route::post('/join-bazaar', [BazaarTenantController::class, 'store'])->middleware(['auth', 'verified']);
 Route::get('/create-bazaar', [BazaarController::class, 'create'])->middleware(['auth', 'isNotAdmin', 'host']);
 Route::post('/create-bazaar', [BazaarController::class, 'store'])->middleware(['auth', 'isNotAdmin', 'host']);
+Route::post('/update-bazaar', [BazaarController::class, 'update'])->middleware(['auth', 'isNotAdmin', 'host']);
 Route::get('/bazaar-details/{id}', [Controller::class, 'bazaardetauls'])->name('bazaar-details');
 
 Route::post('/updatetenants', [BazaarTenantController::class, 'update'])->middleware(['auth', 'verified']);

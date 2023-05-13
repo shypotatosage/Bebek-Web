@@ -2,7 +2,7 @@
 @section('css')
     <link rel="stylesheet" href="{{ asset('styles/mybazaar.css') }}">
 @endsection
-@section('title', 'Pendaftaran Bazaar')
+@section('title', 'My Bazaar')
 @section('content')
     <div class="container mt-4">
         @if (Auth::user()->role == "Tenant")

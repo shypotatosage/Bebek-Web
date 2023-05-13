@@ -131,9 +131,82 @@ class BazaarController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateBazaarRequest $request, Bazaar $bazaar)
+    public function update(Request $request, Bazaar $bazaar)
     {
-        //
+        $this->validate($request, [
+            'bazaar_id' => 'required',
+            'name' => 'required',
+            'description' => 'required',
+            'location' => 'required',
+            'price_estimation' => 'required',
+            'starts_from' => 'required|date|after:now',
+            'ends_at' => 'required|date|after_or_equal:starts_from',
+            'slot' => 'required',
+        ]);
+
+        $bazaar = Bazaar::findOrFail($request->bazaar_id);
+
+        if ($request->hasFile('logo') && $request->hasFile('syarat_ketentuan')) {
+            if (file_exists('storage/' . $bazaar->logo)) {
+                unlink('storage/' . $bazaar->logo);
+            }
+
+            if (file_exists('storage/' . $bazaar->syarat_ketentuan)) {
+                unlink('storage/' . $bazaar->syarat_ketentuan);
+            }
+
+            $bazaar->update([
+                'name' => $request->name,
+                'description' => $request->description,
+                'location' => $request->location,
+                'price_estimation' => $request->price_estimation,
+                'starts_from' => $request->starts_from,
+                'ends_at' => $request->ends_at,
+                'slot' => $request->slot,
+                'syarat_ketentuan' => $request->file('syarat_ketentuan')->store('public/syarat_ketentuan'),
+                'logo' => $request->file('logo')->store('public/logo'),
+            ]);
+        } else if ($request->hasFile('logo')) {
+            if (file_exists('storage/' . $bazaar->logo)) {
+                unlink('storage/' . $bazaar->logo);
+            }
+
+            $bazaar->update([
+                'name' => $request->name,
+                'description' => $request->description,
+                'location' => $request->location,
+                'price_estimation' => $request->price_estimation,
+                'starts_from' => $request->starts_from,
+                'ends_at' => $request->ends_at,
+                'slot' => $request->slot,
+                'logo' => $request->file('logo')->store('public/logo'),
+            ]);
+        } else if ($request->hasFile('syarat_ketentuan')) {
+            if (file_exists('storage/' . $bazaar->syarat_ketentuan)) {
+                unlink('storage/' . $bazaar->syarat_ketentuan);
+            }
+
+            $bazaar->update([
+                'name' => $request->name,
+                'description' => $request->description,
+                'location' => $request->location,
+                'price_estimation' => $request->price_estimation,
+                'starts_from' => $request->starts_from,
+                'ends_at' => $request->ends_at,
+                'slot' => $request->slot,
+                'syarat_ketentuan' => $request->file('syarat_ketentuan')->store('public/syarat_ketentuan'),
+            ]);
+        } else {
+            $bazaar->update([
+                'name' => $request->name,
+                'description' => $request->description,
+                'location' => $request->location,
+                'price_estimation' => $request->price_estimation,
+                'starts_from' => $request->starts_from,
+                'ends_at' => $request->ends_at,
+                'slot' => $request->slot,
+            ]);
+        }
     }
 
     /**
