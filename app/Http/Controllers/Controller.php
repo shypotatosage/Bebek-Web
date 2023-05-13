@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Bazaar;
+use App\Models\BazaarTenant;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
@@ -27,12 +28,20 @@ class Controller extends BaseController
         ]);
     }
 
-    public function bazardetil(){
-        $items = Bazaar::where('id', 1)->first();
+    public function bazaardetauls($id){
+        $items = Bazaar::select(DB::raw('*'))
+              ->where(DB::raw('`bazaars`.`id`'), '=', $id)
+              ->get();
 
-        return view('dashboard', [
+        $bazaarTenants = BazaarTenant::select('bazaar_tenants.*', 'users.name as username')
+              ->where('bazaar_id', $id)
+              ->join('users', 'bazaar_tenants.user_id', '=', 'users.id')
+              ->get();
+
+        return view('bazaardetail', [
             'pagetitle' => 'Catalog',
-            'items' => $items
+            'items' => $items,
+            'tenants' => $bazaarTenants
         ]);
     }
 }

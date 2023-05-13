@@ -3,7 +3,6 @@
 use App\Http\Controllers\BazaarTenantController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\Controller;
 
 use App\Models\BazaarTenant;
 

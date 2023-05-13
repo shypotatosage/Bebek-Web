@@ -15,7 +15,7 @@ class BazaarTenantsSeeder extends Seeder
     {
         BazaarTenant::create(
             [
-                'user_id' => 1,
+                'user_id' => 2,
                 'bazaar_id'=> 1,
                 'activity'=>"activity",
                 'activity_detail'=>"detail activity",
@@ -27,7 +27,7 @@ class BazaarTenantsSeeder extends Seeder
         BazaarTenant::create(
             [
                 'user_id' => 1,
-                'bazaar_id'=> 1,
+                'bazaar_id'=> 3,
                 'activity'=>"activity",
                 'activity_detail'=>"detail activity",
                 'mou'=>"mou.png",
@@ -38,7 +38,7 @@ class BazaarTenantsSeeder extends Seeder
         BazaarTenant::create(
             [
                 'user_id' => 1,
-                'bazaar_id'=> 1,
+                'bazaar_id'=> 4,
                 'activity'=>"activity",
                 'activity_detail'=>"detail activity",
                 'mou'=>"mou.png",
@@ -49,7 +49,7 @@ class BazaarTenantsSeeder extends Seeder
         BazaarTenant::create(
             [
                 'user_id' => 1,
-                'bazaar_id'=> 1,
+                'bazaar_id'=> 2,
                 'activity'=>"activity",
                 'activity_detail'=>"detail activity",
                 'mou'=>"mou.png",
@@ -60,6 +60,17 @@ class BazaarTenantsSeeder extends Seeder
         BazaarTenant::create(
             [
                 'user_id' => 1,
+                'bazaar_id'=> 2,
+                'activity'=>"activity",
+                'activity_detail'=>"detail activity",
+                'mou'=>"mou.png",
+                'payment_prove'=>"payment_prove.png",
+                'status' => "pending",
+            ]
+        );
+        BazaarTenant::create(
+            [
+                'user_id' => 3,
                 'bazaar_id'=> 1,
                 'activity'=>"activity",
                 'activity_detail'=>"detail activity",
@@ -70,18 +81,7 @@ class BazaarTenantsSeeder extends Seeder
         );
         BazaarTenant::create(
             [
-                'user_id' => 1,
-                'bazaar_id'=> 1,
-                'activity'=>"activity",
-                'activity_detail'=>"detail activity",
-                'mou'=>"mou.png",
-                'payment_prove'=>"payment_prove.png",
-                'status' => "pending",
-            ]
-        );
-        BazaarTenant::create(
-            [
-                'user_id' => 1,
+                'user_id' => 2,
                 'bazaar_id'=> 1,
                 'activity'=>"activity",
                 'activity_detail'=>"detail activity",
