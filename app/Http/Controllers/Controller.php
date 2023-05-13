@@ -26,4 +26,13 @@ class Controller extends BaseController
             'items' => $items
         ]);
     }
+
+    public function bazardetil(){
+        $items = Bazaar::where('id', 1)->first();
+
+        return view('dashboard', [
+            'pagetitle' => 'Catalog',
+            'items' => $items
+        ]);
+    }
 }

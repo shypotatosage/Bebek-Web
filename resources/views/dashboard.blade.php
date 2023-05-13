@@ -39,6 +39,7 @@
         <h1 class="home-text2">Discover new bazaar</h1>
         <div class="home-container3">
             @foreach ($items as $item)
+            <a href="/bazaar-details/{{ $item->id }}">
                 <div class="feature-card1-feature-card">
                 <img
                   alt="image"
@@ -47,9 +48,16 @@
                 <h3 class="feature-card1-text"><span><?=$item["name"]?></span></h3>
                 <hr>
                 <h4 class="card-text"><span><?=$item["starts_from"]?></span></h4>
-                <h4 class="card-text"><span>Num:<?=$item["num_attendees"]?>/Slot:<?=$item["slot"]?>
+                <h4 class="card-text">
+                    @if ($item["num_attendees"]>=$item["slot"])
+                    <span>FULL
+                    @else
+                    <span>Available : <?=$item["slot"]-$item["num_attendees"]?> Slots
+                    @endif
+                    
                 </span></h4>
               </div>
+            </a>
             @endforeach
         </div>
       </div>
