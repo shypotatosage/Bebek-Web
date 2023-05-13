@@ -1,7 +1,10 @@
 <?php
 
+use App\Http\Controllers\BazaarTenantController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\Controller;
+
+use App\Models\BazaarTenant;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,6 +19,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [Controller::class, 'dashboard']);
+
+Route::post('/join-bazaar', [BazaarTenantController::class, 'store'])->middleware(['auth', 'verified']);
 
 Route::get('/login', function () {
     return view('auth.login');
