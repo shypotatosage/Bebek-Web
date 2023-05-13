@@ -29,17 +29,18 @@
             <div class="col-lg-8 text-center text-lg-start">
                 <h5 class="d-inline-block text-uppercase border-bottom border-5" style="color:white; border-color: rgba(256, 256, 256, .3) !important;">Welcome To BazaarBond</h5>
                 <h1 class="display-1 text-white mb-md-4">Digital Solution For Your Market</h1>
-                <div class="pt-2">
-                    <a href="/create-bazaar" class="btn btn-light rounded-pill py-md-3 px-md-5 mx-2">Create Bazaar</a>
-                    {{-- <a href="" class="btn btn-outline-light rounded-pill py-md-3 px-md-5 mx-2">Appointment</a> --}}
-                </div>
+                @if (Auth::check() && Auth::user()->role == "Host")
+                    <div class="pt-2">
+                        <a href="/create-bazaar" class="btn btn-light rounded-pill py-md-3 px-md-5 mx-2">Create Bazaar</a>
+                        {{-- <a href="" class="btn btn-outline-light rounded-pill py-md-3 px-md-5 mx-2">Appointment</a> --}}
+                    </div>
+                @endif
             </div>
         </div>
     </div>
 </div>
 <!-- Hero End -->
     <div>
-        <link href="./home.css" rel="stylesheet" />
         <div class="home-container">
             {{-- <div class="home-container1 py-5">
                 <div class="banner-spacer py-5 my-5">
@@ -51,10 +52,10 @@
                 <h1 class="home-text2">Discover New Bazaar</h1>
                 <div class="home-container3">
                     @foreach ($items as $item)
-                        <a href="/bazaar-details/{{ $item->id }}">
+                        <a href="/bazaar-details/{{ $item->id }}" class="text-decoration-none color-black">
                             <div class="feature-card1-feature-card">
                                 <img alt="image"
-                                    src="https://images.unsplash.com/photo-1512295767273-ac109ac3acfa?ixid=Mnw5MTMyMXwwfDF8c2VhcmNofDF8fHllbGxvdyUyMHRlY2h8ZW58MHx8fHwxNjI2MjU1NDk0&ixlib=rb-1.2.1&w=1000"
+                                    src="{{ asset('storage/' . $item->logo) }}"
                                     class="feature-card1-image" />
                                 <h3 class="feature-card1-text"><span><?= $item['name'] ?></span></h3>
                                 <hr>
@@ -62,8 +63,8 @@
                                 <h4 class="card-text">
                                     @if ($item['num_attendees'] >= $item['slot'])
                                         <span>FULL
-                                        @else
-                                            <span>Available : <?= $item['slot'] - $item['num_attendees'] ?> Slots
+                                    @else
+                                        <span>Available : <?= $item['slot'] - $item['num_attendees'] ?> Slots
                                     @endif
 
                                     </span>
@@ -73,6 +74,9 @@
                     @endforeach
                 </div>
             </div>
+        </div>
+        <div class="d-flex justify-content-center pb-5">
+            {!! $items->links() !!}
         </div>
     </div>
 @endsection

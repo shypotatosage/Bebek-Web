@@ -9,6 +9,10 @@
   background-size: cover;
 }
 
+.color-black {
+  color: #000000;
+}
+
 .feature-card1-feature-card {
   width: 105%;
   display: flex;

@@ -20,8 +20,7 @@ class Controller extends BaseController
         ->groupBy('bazaars.id', 'bazaars.name', 'bazaars.created_at', 'bazaars.updated_at', 'bazaars.description', 'bazaars.location', 'bazaars.price_estimation'
         ,'bazaars.starts_from','bazaars.ends_at','bazaars.syarat_ketentuan','bazaars.slot','bazaars.logo', 'bazaars.user_id', 'bazaars.payment')
         ->orderBy('bazaars.id')
-        ->limit(8)
-        ->get();
+        ->paginate(8);
     
         return view('dashboard', [
             'pagetitle' => 'Catalog',

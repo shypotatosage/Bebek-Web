@@ -68,8 +68,8 @@ class BazaarController extends Controller
             'starts_from' => $request->starts_from,
             'ends_at' => $request->ends_at,
             'slot' => $request->slot,
-            'syarat_ketentuan' => $request->file('syarat_ketentuan')->store('syarat_ketentuan'),
-            'logo' => $request->file('logo')->store('logo'),
+            'syarat_ketentuan' => $request->file('syarat_ketentuan')->store('public/syarat_ketentuan'),
+            'logo' => $request->file('logo')->store('public/logo'),
         ]);
 
         // Set your Merchant Server Key
