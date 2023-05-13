@@ -53,7 +53,7 @@ class UserSeeder extends Seeder
             [
                 'name' => 'Oweekucs',
                 'email' => "te5s@gmail.com",
-                'phone_number' =>"082236711",
+                'phone_number' =>"082711",
                 'password'=>"cicak",
                 'role'=>"user",
             ]
