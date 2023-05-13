@@ -53,6 +53,18 @@ class ProfileController extends Controller
         Auth::logout();
     }
 
+    public function updateuser()
+    {
+        $Item = User::findOrFail($_POST['id']);
+
+            $Item->update([
+                'email' => $_POST['email'],
+                'phone_number' => $_POST['phone'],
+                'bank_account_number' => $_POST['bank'],
+            ]);
+            return redirect()->back();
+
+    }
     /**
      * Delete the user's account.
      */

@@ -2,7 +2,7 @@
 @section('css')
     <link rel="stylesheet" href="{{ asset('styles/mybazaar.css') }}">
 @endsection
-@section('title', 'Pendaftaran Bazaar')
+@section('title', 'My Bazaar')
 @section('content')
     <div class="container mt-4">
         @if (Auth::user()->role == "Tenant")
@@ -16,15 +16,16 @@
                 </div>
             @else
                 <div class="row mt-4 pb-5 justify-content-evenly">
+                    
                     @foreach ($bazaars as $bazaar)
+
                         <div class="rounded-4 col-10 col-md-5 col-lg-3 me-2 bazaar-tenant-card p-4 my-3 my-md-4">
                             <img src="{{ asset('images/assets/bazaar.jpeg') }}" alt="" class="w-100 rounded-3">
-                            <p class="fw-semibold fs-4 w-100 text-center pt-3">Nama Bazaar</p>
-
+                            <p class="fw-semibold fs-4 w-100 text-center pt-3"><?=$bazaar['name']?></p>
                             <div class="row justify-content-center">
-                                @if ($bazaar->status == "Pending")
+                                @if ($bazaar->status == "pending")
                                     <h5 class="text-warning text-center">Pending</h5>
-                                @elseif ($bazaar->status == "Approved")
+                                @elseif ($bazaar->status == "accepted")
                                     <h5 class="text-success text-center">Approved</h5>
                                 @else
                                     <h5 class="text-danger text-center">Declined</h5>
@@ -50,7 +51,7 @@
                 <div class="row mt-4 pb-5 justify-content-evenly">
                     @foreach ($bazaars as $bazaar)
                         <div class="rounded-4 col-10 col-md-5 col-lg-3 me-2 bazaar-tenant-card p-4 my-3 my-md-4">
-                            <img src="{{ asset('images/assets/bazaar.jpeg') }}" alt="" class="w-100 rounded-3">
+                            <img src="{{ asset('storage/' . $bazaar->logo) }}" alt="" class="w-100 rounded-3" style="height: 300px; object-fit: contain;">
                             <p class="fw-semibold fs-4 w-100 text-center pt-3 my-1">{{ $bazaar->name }}</p>
                             <p class="fw-medium fs-6 w-100 text-center my-0">{{ count($bazaar->bazaar_tenants) . ' Tenants' }}</p>
                             <p class="fw-medium fs-6 w-100 text-center py-0">{{ $bazaar->location }}</p>

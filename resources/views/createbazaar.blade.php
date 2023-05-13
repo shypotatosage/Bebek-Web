@@ -63,7 +63,7 @@
                 <label for="inputStartsFrom" class="mb-2 fw-semibold">Tanggal Mulai</label>
                 <input id="date1" type="date"
                             class="form-control fw-medium"
-                            name="starts_from" value="mm/dd/yyyy">
+                            name="starts_from" placeholder="mm/dd/yyyy" required>
                 <small class="text-danger">
                 @foreach ($errors->get('starts_from') as $err)
                     @if ($loop->iteration > 1)
@@ -77,7 +77,7 @@
                 <label for="inputEndsAt" class="mb-2 fw-semibold">Tanggal Akhir</label>
                 <input id="date1" type="date"
                             class="form-control fw-medium"
-                            name="ends_at" value="mm/dd/yyyy">
+                            name="ends_at" placeholder="mm/dd/yyyy" required>
                 <small class="text-danger">
                 @foreach ($errors->get('ends_at') as $err)
                     @if ($loop->iteration > 1)

@@ -57,8 +57,8 @@ class BazaarTenantController extends Controller
             'bazaar_id' => $request->bazaar_id,
             'activity' => $request->activity,
             'activity_detail' => $request->activity_detail,
-            'mou' => $request->file('mou')->store('mou'),
-            'payment_prove' => $request->file('payment_prove')->store('payment_proves')
+            'mou' => $request->file('mou')->store('public/mou'),
+            'payment_prove' => $request->file('payment_prove')->store('public/payment_proves')
         ]);
 
         return redirect('/');
@@ -85,6 +85,19 @@ class BazaarTenantController extends Controller
      */
     public function update(Request $request, BazaarTenant $bazaarTenant)
     {
+        if(isset($_POST['updatebazaar'])){
+            $Item = Bazaar::findOrFail($_POST['id_bazaar']);
+
+            $Item->update([
+                'status' => "accepted",
+            ]);
+        }
+        
+        if(isset($_POST['remove'])){
+            Bazaar::where('id', $_POST['id_bazaar'])->delete();
+            return redirect("/");
+        }
+
         if(isset($_POST['acc'])){
             $Item = BazaarTenant::findOrFail($_POST['id_btenant']);
 

@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string("syarat_ketentuan");
             $table->integer("slot");
             $table->string("logo");
+            $table->string("payment")->default("Unpaid");
             $table->foreignIdFor(User::class);
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');

@@ -2,7 +2,7 @@
 @section('css')
     <link rel="stylesheet" href="{{ asset('styles/aboutus.css') }}">
 @endsection
-@section('title', 'Pendaftaran Bazaar')
+@section('title', 'About Us')
 
 @section('content')
 <div class="container mt-5">
