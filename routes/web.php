@@ -3,9 +3,10 @@
 use App\Http\Controllers\BazaarTenantController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\Controller;
+
 
 use App\Models\BazaarTenant;
+
 
 use Illuminate\Support\Facades\Route;
 
@@ -20,8 +21,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [Controller::class, 'dashboard']);
+Route::get('/', [Controller::class, 'dashboard'])->name('dashboard');
 
+Route::get('/join-bazaar/{id}', [BazaarTenantController::class, 'create'])->middleware(['auth', 'verified']);
 Route::post('/join-bazaar', [BazaarTenantController::class, 'store'])->middleware(['auth', 'verified']);
 Route::get('/bazaar-details/{id}', [Controller::class, 'bazaardetauls'])->name('bazaar-details');
 
@@ -31,6 +33,10 @@ Route::get('/login', function () {
 
 Route::get('/contact', function () {
     return view('support');
+});
+
+Route::get('/createbazaar', function () {
+    return view('createbazaar');
 });
 
 Route::get('/about', function () {
@@ -45,9 +51,9 @@ Route::get('/joinbazaar', function () {
     return view('joinbazaar');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/logout', [ProfileController::class, 'logout']);
 

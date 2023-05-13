@@ -12,11 +12,8 @@ class BazaarTenant extends Model
     protected $fillable = [
         'user_id',
         'bazaar_id',
-        'name',
         'activity',
-        'electricity',
         'activity_detail',
-        'extra_needs',
         'mou',
         'payment_prove',
         'status'
