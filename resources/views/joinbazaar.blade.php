@@ -20,7 +20,7 @@
             </div>
         </div>
 
-        <form action="/tambah-lokasi" method="post">
+        <form action="/tambah-stand" method="post">
             @csrf
             <div class="mb-3 mt-4">
                 <label for="inputName" class="font-montserrat mb-2 fw-semibold">Nama Stand</label>

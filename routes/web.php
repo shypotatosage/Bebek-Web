@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\BazaarTenantController;
 use App\Http\Controllers\ProfileController;
+use App\Models\BazaarTenant;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +19,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('joinbazaar');
 });
+
+Route::post('/tambah-stand', [BazaarTenantController::class, 'store'])->middleware(['auth', 'verified']);
 
 Route::get('/login', function () {
     return view('auth.login');
