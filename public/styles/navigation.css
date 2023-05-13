@@ -4,39 +4,13 @@
     font-family: 'Nunito Sans', sans-serif;
 }
 
-.login-register-bg {
-    background-image: url("/images/assets/bazaar.jpg");
-    background-color: #cccccc;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100vh;
+.nav-item>a:hover {
+    color: #d80032;
 }
 
-.color-yellow {
-    color: #e09c29;
-}
-
-.color-aqua {
-    color: #146C94;
-}
-
-.line1 {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 3px solid #e09c29;
-    padding: 0;
-    width: 50%;
-}
-
-.logreg-container {
-    height: 100vh;
-}
-
-.login-register-form-bg {
-    background-color: rgba(255, 255, 255);
-    height: 100%;
-    width: 50%;
+.nav-link {
+    color: black;
+    font-weight: 500;
 }
 
 .btn-primary {
@@ -81,10 +55,21 @@
     box-shadow: 0 0.25px 2px 0.5px #b7b7b7 !important;
 }
 
-@media only screen and (max-width: 992px) {
-    .login-register-form-bg {
-        background-color: rgba(255, 255, 255, 0.95);
-        width: 80%;
-        border-radius: 25px;
+@media screen and (max-width: 992px) {
+    .nav-between-on-mobile {
+        width: 100% !important;
+        justify-content: space-between;
     }
+}
+
+footer {
+    background-color: #2f2e41;
+}
+
+.unduh:hover {
+    background-color: #d80032;
+}
+
+.unduh {
+    background-color: #ef233c;
 }
