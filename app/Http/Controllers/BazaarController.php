@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Bazaar;
 use App\Http\Requests\StoreBazaarRequest;
 use App\Http\Requests\UpdateBazaarRequest;
+use Illuminate\Http\Request;
 
 class BazaarController extends Controller
 {
@@ -14,6 +15,13 @@ class BazaarController extends Controller
     public function index()
     {
         //
+    }
+
+    public function join(Request $request) 
+    {
+        return view('joinbazaar', [
+            'bazaar' => Bazaar::findOrFail($request->id),
+        ]);
     }
 
     /**

@@ -74,6 +74,7 @@
     border-color: #094764 !important;
     box-shadow: 0 0px 4px 0.25px #b7b7b7 !important;
 }
+
 .btn-primary:not(:disabled):not(.disabled):active:focus,
 .btn-primary:not(:disabled):not(.disabled).active:focus,
 .show>.btn-primary.dropdown-toggle:focus {
