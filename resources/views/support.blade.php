@@ -18,7 +18,7 @@
 
 <link rel="stylesheet" href="{{ asset('styles/supportStyle.css') }}">
 @endsection
-@section('title', 'Pendaftaran Bazaar')
+@section('title', 'Contact Us')
 
 @section('content')
 
