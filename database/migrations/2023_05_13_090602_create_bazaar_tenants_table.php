@@ -17,16 +17,12 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(User::class);
             $table->foreignIdFor(Bazaar::class);
-            $table->string('name');
             $table->string('activity');
-            $table->boolean('electricity');
             $table->string('activity_detail');
-            $table->string('extra_needs');
             $table->text('mou');
             $table->text('payment_prove');
-            $table->integer('status');
+            $table->string('status');
             $table->timestamps();
-
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('bazaar_id')->references('id')->on('bazaars')->onDelete('cascade')->onUpdate('cascade');
         });
