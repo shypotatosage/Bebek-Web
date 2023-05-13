@@ -4,6 +4,7 @@
 
   .img-us {
     padding: 5px;
-    width: 500px;
-    
+    width:500px;
+    height:250px;
+    object-fit:contain;
   }
