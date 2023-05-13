@@ -21,7 +21,7 @@
 @section('title', 'Contact Us')
 
 @section('content')
-
+<div class="container mt-5">
     <div class="contact-area pb-4">
         <h1 class="title-contact">Hubungi Kami</h1>
         <div class="company-sosmed">
@@ -127,4 +127,5 @@
             </div>
         </div>
     </div>
+</div>
 @endsection

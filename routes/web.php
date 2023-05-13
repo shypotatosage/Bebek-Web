@@ -26,10 +26,6 @@ Route::get('/contact', function () {
     return view('support');
 });
 
-Route::get('/profile', function () {
-    return view('profile');
-});
-
 Route::get('/about', function () {
     return view('aboutus');
 });

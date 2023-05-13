@@ -5,7 +5,7 @@
 @section('title', 'Pendaftaran Bazaar')
 
 @section('content')
-
+<div class="container mt-5">
 <div class="flex-container pb-4">
     <div>
         <h1 class="title-contact">About Us</h1>
@@ -15,4 +15,5 @@
         <img class="img-us" src="{{ asset('images/assets/bazaarbond.png') }}">
     </div>
 </div> 
+</div>
 @endsection
