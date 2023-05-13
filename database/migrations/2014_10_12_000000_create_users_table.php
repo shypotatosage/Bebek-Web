@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('phone_number')->unique();
             $table->string('bank_account_number');
-            $table->foreignIdFor(BankType::class);
+            $table->foreignIdFor(BankType::class)->default(1);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->text('profile_picture');
