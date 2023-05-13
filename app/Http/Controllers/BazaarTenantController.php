@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Bazaar;
 use App\Models\BazaarTenant;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class BazaarTenantController extends Controller
 {
@@ -21,9 +22,15 @@ class BazaarTenantController extends Controller
      */
     public function create(Request $request)
     {
-        return view('joinbazaar', [
-            'bazaar' => Bazaar::findOrFail($request->id),
-        ]);
+        $bazaar = Bazaar::findOrFail($request->id);
+
+        if (count(BazaarTenant::where('bazaar_id', '=', $bazaar->id)->get()) < $bazaar->slot) {
+            return view('joinbazaar', [
+                'bazaar' => $bazaar,
+            ]);
+        } else {
+            return redirect()->route('dashboard');
+        }
     }
 
     /**
@@ -31,7 +38,24 @@ class BazaarTenantController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'bazaar_id' => 'required|numeric',
+            'activity' => 'required',
+            'activity_detail' => 'required',
+            'mou' => 'required',
+            'payment_prove' => 'required'
+        ]);
+
+        BazaarTenant::create([
+            'user_id' => Auth::id(),
+            'bazaar_id' => $request->bazaar_id,
+            'activity' => $request->activity,
+            'activity_detail' => $request->activity_detail,
+            'mou' => $request->file('mou')->store('mou'),
+            'payment_prove' => $request->file('payment_prove')->store('payment_proves')
+        ]);
+
+        return redirect('/');
     }
 
     /**
