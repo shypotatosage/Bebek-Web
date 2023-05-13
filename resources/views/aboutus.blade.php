@@ -6,14 +6,50 @@
 
 @section('content')
 <div class="container mt-5">
-<div class="flex-container pb-4">
-    <div>
-        <h1 class="title-contact">About Us</h1>
-        <h5 class="title-contact">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h5>
+<!-- About Start -->
+<div class="container-fluid wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container mb-5">
+        <div class="row g-5">
+            <div class="col-lg-7">
+                <div class="section-title position-relative pb-3">
+                    <h5 style="color: #0369A1" class="fw-bold text-uppercase">About Us</h5>
+                    <h1 class="mb-0">The Future Solution For UMKM & Bazaar</h1>
+                </div>
+                <p class="mb-4">Bazaarbond is here as an digital solution in bringing together UMKM and Bazaars.</p>
+                <div class="row g-0 mb-3">
+                    <div class="col-sm-6 wow zoomIn" data-wow-delay="0.2s">
+                        <h5 class="mb-3"><i style="color: #0369A1" class="fa fa-check me-3"></i>Guaranteed Safety</h5>
+                        <h5 class="mb-3"><i style="color: #0369A1" class="fa fa-check me-3"></i>Professional Staff</h5>
+                    </div>
+                    <div class="col-sm-6 wow zoomIn" data-wow-delay="0.4s">
+                        <h5 class="mb-3"><i style="color: #0369A1" class="fa fa-check me-3"></i>24/7 Support</h5>
+                        <h5 class="mb-3"><i style="color: #0369A1" class="fa fa-check me-3"></i></i>Fair Prices</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5" style="min-height: 500px;">
+                <div class="position-relative h-100">
+                    <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.9s" src="{{ asset('images/assets/bazaar.jpeg') }}" style="object-fit: cover;">
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="ps-3" style="object-fit:fill; display: flex; justify-content: center;">
-        <img class="img-us" src="{{ asset('images/assets/bazaarbond.png') }}">
+</div>
+{{-- <div class="container-fluid wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container mb-5">
+        <div class="row g-5">
+            <div class="col-lg-7">
+                <div class="section-title position-relative pb-3">
+                    <h5 style="color: #0369A1" class="fw-bold text-uppercase">Our Partner</h5>
+                    <h1 class="mb-0">The Future Solution For UMKM & Bazaar</h1>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <img class="px-3" src="{{ asset('images/assets/bazaar.jpeg') }}" style="object-fit: cover; width:100px">
+                    <img class="px-3" src="{{ asset('images/assets/bazaar.jpeg') }}" style="object-fit: cover; width:100px">
+                </div>
+            </div>
+        </div>
     </div>
-</div> 
+</div> --}}
 </div>
 @endsection
