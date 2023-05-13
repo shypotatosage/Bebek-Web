@@ -20,7 +20,7 @@
             </div>
         </div>
 
-        <form action="/tambah-lokasi" method="post">
+        <form action="/join-bazaar" method="post" class="pb-5">
             @csrf
             <div class="mb-3 mt-4">
                 <label for="inputName" class="font-montserrat mb-2 fw-semibold">Nama Stand</label>
@@ -90,22 +90,30 @@
                 @endforeach
                 </small>
             </div>
-            <form action="{{ route('dropzone.storehouse') }}" class="dropzone col justify-content-center text-center mb-4" id="my-dropzone">
-                @csrf
-                <div class="dz-message" data-dz-message>
-                    <img src="{{ asset('/images/assets/imgdragdropicon.png') }}" alt="Add Image Icon" class="dragdropicon mb-3">
-                    <p class="font-montserrat fw-medium dragdroptext d-none d-lg-block">Drag & Drop Gambar Di Sini Untuk Di Upload</p>
-                    <p class="font-montserrat fw-medium dragdroptext d-lg-none">Upload Gambar Di Sini</p>
-                </div>
-            </form>
-            <small class="text-danger font-montserrat">
-                @foreach ($errors->get('gambar_rumah') as $err)
+            <div class="mb-3 mt-4">
+                <label for="inputMoU" class="font-montserrat mb-2 fw-semibold">Upload MoU</label>
+                <input type="file" accept="application/pdf" class="form-control font-montserrat fw-medium" id="inputMoU" name="mou" placeholder="Upload MoU" required>
+                <small class="text-danger font-montserrat">
+                @foreach ($errors->get('mou') as $err)
                     @if ($loop->iteration > 1)
                         <br/>
                     @endif
                     {{ ucfirst($err) }}
                 @endforeach
-            </small>
+                </small>
+            </div>
+            <div class="mb-3 mt-4">
+                <label for="inputBuktiPembayaran" class="font-montserrat mb-2 fw-semibold">Upload Bukti Pembayaran</label>
+                <input type="file" accept="application/pdf" class="form-control font-montserrat fw-medium" id="inputBuktiPembayaran" name="payment_prove" placeholder="Upload Bukti Pembayaran" required>
+                <small class="text-danger font-montserrat">
+                @foreach ($errors->get('payment_prove') as $err)
+                    @if ($loop->iteration > 1)
+                        <br/>
+                    @endif
+                    {{ ucfirst($err) }}
+                @endforeach
+                </small>
+            </div>
         </form>
     </div>
 @endsection
