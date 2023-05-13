@@ -85,6 +85,14 @@ class BazaarTenantController extends Controller
      */
     public function update(Request $request, BazaarTenant $bazaarTenant)
     {
+        if(isset($_POST['updatebazaar'])){
+            $Item = Bazaar::findOrFail($_POST['id_bazaar']);
+
+            $Item->update([
+                'status' => "accepted",
+            ]);
+        }
+        
         if(isset($_POST['remove'])){
             Bazaar::where('id', $_POST['id_bazaar'])->delete();
             return redirect("/");
