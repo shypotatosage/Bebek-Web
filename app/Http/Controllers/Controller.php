@@ -7,6 +7,7 @@ use App\Models\BazaarTenant;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class Controller extends BaseController
@@ -29,6 +30,7 @@ class Controller extends BaseController
     }
 
     public function bazaardetauls($id){
+        
         $items = Bazaar::select(DB::raw('*'))
               ->where(DB::raw('`bazaars`.`id`'), '=', $id)
               ->get();

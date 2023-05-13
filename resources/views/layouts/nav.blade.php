@@ -9,13 +9,7 @@
         <div class="collapse navbar-collapse flex-grow-0" id="navbarNav">
             <ul class="navbar-nav text-center">
                 <li class="nav-item active">
-                    <a class="nav-link py-2 px-4" href="/">Bazaars</a>
-                </li>
-                <li class="nav-item active">
                     <a class="nav-link py-2 px-4" href="/bazaars">My Bazaars</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link py-2 px-4" href="/bazaars">My Tenants</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link py-2 px-4" href="/about">About</a>

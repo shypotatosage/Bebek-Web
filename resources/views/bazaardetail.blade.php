@@ -13,10 +13,10 @@
                     <div class="d-flex flex-column flex-md-row text-center text-md-start pt-4 pt-md-0 align-items-center">
                         <p class="fs-2 pe-4 fw-bold"><?=$item['name']?></p>
                         <p class="color-green fs-5 fw-semibold">
-                            @if ($item["num_attendees"]>=$item["slot"])
+                            @if (count($tenants)>=$item["slot"])
                             FULL
                             @else
-                            Available : <?=$item["slot"]-$item["num_attendees"]?> Slots
+                            Available : <?=$item["slot"]-count($tenants)?> Slots
                             @endif
                         </p>
                     </div>
@@ -24,7 +24,16 @@
                     <p class="fw-medium fs-5"><?=$item['location']?></p>
                     <p class="fw-medium fs-5"><?=$item['price_estimation']?></p>
                     {{-- <form action="{{ route('bazaars.show', $bazaar->id) }}" method="GET" class="me-3 mt-2 mt-md-0 mb-4 mb-md-0"> --}}
+                    @if (auth()->user()->role == "Host")
+                        <button type="submit" style="background-color:#cf3e12;" class="btn btn-secondary font-montserrat fw-semibold py-2 px-4 mt-2 px-5">Remove</button>
+                    @else
+                        @if (count($tenants)>=$item["slot"])
+                        <button type="submit" style="background-color:#2B2D42;" class="btn btn-secondary font-montserrat fw-semibold py-2 px-4 mt-2 px-5" disabled>Daftar</button>
+                        @else
                         <button type="submit" style="background-color:#2B2D42;" class="btn btn-secondary font-montserrat fw-semibold py-2 px-4 mt-2 px-5">Daftar</button>
+                         @endif
+                    @endif
+
                     {{-- </form> --}}
                 </div>
             </div>
@@ -37,6 +46,15 @@
                     <p class="fw-medium fs-5 ms-5 fw-semibold"><?=$tenant['username']?></p>
                     <p class="fw-medium fs-5 ms-5"><?=$tenant['activity_detail']?></p>
                 </div>
+                <form >
+                </form>
+                @if (auth()->user()->role == "Host")
+                    @if ($tenant['status'] == "pending")
+                    <button type="submit" style="background-color:#12cf12;" class="btn btn-secondary font-montserrat fw-semibold py-2 px-4 mt-2 px-5">Accept</button> 
+                    @else
+                    <button type="submit" style="background-color:#cf3e12;" class="btn btn-secondary font-montserrat fw-semibold py-2 px-4 mt-2 px-5">Reject</button>   
+                    @endif
+                @endif
                 @php
                     $i++;
                 @endphp

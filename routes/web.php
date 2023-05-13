@@ -21,7 +21,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [Controller::class, 'dashboard'])->name('dashboard');
+Route::get('/', [Controller::class, 'dashboard']);
+Route::get('/dashboard', [Controller::class, 'dashboard'])->name('dashboard');
 
 Route::get('/join-bazaar/{id}', [BazaarTenantController::class, 'create'])->middleware(['auth', 'verified']);
 Route::post('/join-bazaar', [BazaarTenantController::class, 'store'])->middleware(['auth', 'verified']);
