@@ -131,7 +131,7 @@ class BazaarController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Bazaar $bazaar)
+    public function update(Request $request)
     {
         $this->validate($request, [
             'bazaar_id' => 'required',
