@@ -5,5 +5,5 @@
 @section('title', 'Pendaftaran Bazaar')
 
 @section('content')
-
+    
 @endsection
