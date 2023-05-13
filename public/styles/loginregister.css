@@ -12,6 +12,14 @@
     height: 100vh;
 }
 
+.color-yellow {
+    color: #e09c29;
+}
+
+.color-aqua {
+    color: #146C94;
+}
+
 .line1 {
     display: block;
     height: 1px;
@@ -29,4 +37,53 @@
     background-color: rgba(255, 255, 255);
     height: 100%;
     width: 50%;
+}
+
+.btn-primary {
+    color: #ffffff !important;
+    background-color: #146C94 !important;
+    border-color: #146C94 !important;
+    box-shadow: 0 0px 4px 0.25px #b7b7b7 !important;
+}
+
+.btn-primary:hover {
+    color: #ffffff !important;
+    background-color: #0e5678 !important;
+    border-color: #0e5678 !important;
+    box-shadow: 0 0px 4px 0.25px #b7b7b7 !important;
+}
+
+.btn-primary:focus,
+.btn-primary.focus {
+    box-shadow: 0 0px 4px 0.25px #b7b7b7 !important;
+}
+
+.btn-primary.disabled,
+.btn-primary:disabled {
+    color: rgb(184, 184, 184) !important;
+    background-color: #146C94 !important;
+    border-color: #146C94 !important;
+    box-shadow: 0 0px 4px 0.25px #b7b7b7 !important;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active,
+.btn-primary:not(:disabled):not(.disabled).active,
+.show>.btn-primary.dropdown-toggle {
+    color: #ffffff !important;
+    background-color: #094764 !important;
+    border-color: #094764 !important;
+    box-shadow: 0 0px 4px 0.25px #b7b7b7 !important;
+}
+.btn-primary:not(:disabled):not(.disabled):active:focus,
+.btn-primary:not(:disabled):not(.disabled).active:focus,
+.show>.btn-primary.dropdown-toggle:focus {
+    box-shadow: 0 0.25px 2px 0.5px #b7b7b7 !important;
+}
+
+@media only screen and (max-width: 992px) {
+    .login-register-form-bg {
+        background-color: rgba(255, 255, 255, 0.95);
+        width: 80%;
+        border-radius: 25px;
+    }
 }

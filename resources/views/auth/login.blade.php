@@ -9,11 +9,11 @@
     <title>Login</title>
 </head>
 <body class="login-register-bg">
-    <div class="d-flex flex-row justify-content-lg-start justify-content-center py-lg-0 py-4 logreg-container">
+    <div class="d-flex flex-row justify-content-lg-end justify-content-center py-lg-0 py-4 logreg-container">
         <div class="login-register-form-bg d-flex align-items-center justify-content-center flex-column">
             <h2 class="fw-bold font-montserrat">MASUK</h2>
             <div class="line1 mx-4"></div>
-            <h5 class="font-montserrat fw-semibold mt-3 text-center mx-5">Promote Your <span class="color-yellow">Start Up</span> And Gain <span class="color-yellow">Investors</span></h5>
+            <h5 class="fw-semibold mt-3 text-center mx-5">Promote Your <span class="color-aqua fw-bold">Start Up</span> And Gain <span class="color-aqua fw-bold">Investors</span></h5>
             <form action="{{ route('login') }}" method="post" class="w-75">
                 @csrf
                 <div class="mb-3 mt-4">
