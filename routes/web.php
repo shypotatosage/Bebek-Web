@@ -35,6 +35,14 @@ Route::get('/contact', function () {
     return view('support');
 });
 
+Route::get('/ownedtenant', function () {
+    return view('');
+});
+
+Route::get('/ownedbazaar', function () {
+    return view('');
+});
+
 Route::get('/createbazaar', function () {
     return view('createbazaar');
 });
