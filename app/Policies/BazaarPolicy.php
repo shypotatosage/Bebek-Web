@@ -14,6 +14,7 @@ class BazaarPolicy
     public function viewAny(User $user): bool
     {
         //
+        return true;
     }
 
     /**
@@ -22,6 +23,7 @@ class BazaarPolicy
     public function view(User $user, Bazaar $bazaar): bool
     {
         //
+        return true;
     }
 
     /**
@@ -30,6 +32,7 @@ class BazaarPolicy
     public function create(User $user): bool
     {
         //
+        return true;
     }
 
     /**
@@ -38,6 +41,7 @@ class BazaarPolicy
     public function update(User $user, Bazaar $bazaar): bool
     {
         //
+        return true;
     }
 
     /**
@@ -46,6 +50,7 @@ class BazaarPolicy
     public function delete(User $user, Bazaar $bazaar): bool
     {
         //
+        return true;
     }
 
     /**
@@ -54,6 +59,7 @@ class BazaarPolicy
     public function restore(User $user, Bazaar $bazaar): bool
     {
         //
+        return true;
     }
 
     /**
@@ -62,5 +68,6 @@ class BazaarPolicy
     public function forceDelete(User $user, Bazaar $bazaar): bool
     {
         //
+        return true;
     }
 }
