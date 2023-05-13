@@ -10,6 +10,7 @@ use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
+use Filament\Forms\Components\Card;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
@@ -23,7 +24,8 @@ class BazaarResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name')
+                Card::make()->schema([
+                    Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(255),
                 Forms\Components\Textarea::make('description')
@@ -35,19 +37,25 @@ class BazaarResource extends Resource
                     ->required()
                     ->maxLength(255),
                 Forms\Components\DatePicker::make("starts_from")
+                    ->closeOnDateSelection()
                     ->required(),
                 Forms\Components\DatePicker::make("ends_at")
+                    ->closeOnDateSelection()
                     ->required(),
-                // Forms\Components\Textarea::make('description')
-                //     ->required(),
+                Forms\Components\FileUpload::make('syarat_dan_ketentuan')
+                    ->acceptedFileTypes(['application/pdf'])
+                    ->maxSize(2048)
+                    ->preserveFilenames(),
+                    // ->disabled(),
                 Forms\Components\TextInput::make('slot')
                     ->numeric()
-                    ->required()
-                    ->maxLength(255),
-                // Forms\Components\Textarea::make('logo')
-                //     ->required(),
-                
-                // Form Input?
+                    ->minValue(1)
+                    ->required(),
+                Forms\Components\FileUpload::make('logo')
+                    ->image()
+                    ->dehydrated(fn ($state) => filled($state))
+                    ->disabled(),
+                ])
             ]);
     }
 
