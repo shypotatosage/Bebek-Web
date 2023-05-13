@@ -34,6 +34,14 @@ Route::get('/about', function () {
     return view('aboutus');
 });
 
+Route::get('/bazaardetail', function () {
+    return view('bazaardetail');
+});
+
+Route::get('/joinbazaar', function () {
+    return view('joinbazaar');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
