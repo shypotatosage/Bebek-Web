@@ -44,7 +44,7 @@ class UserSeeder extends Seeder
             [
                 'name' => 'ISB_SU',
                 'email' => "tes4@gmail.com",
-                'phone_number' =>"08223697711",
+                'phone_number' =>"697711",
                 'password'=>"cicak",
                 'role'=>"user",
             ]
