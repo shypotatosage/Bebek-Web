@@ -30,6 +30,132 @@ class BazaarSeeder extends Seeder
         );
         Bazaar::create(
             [
+                'name' => "9th NPLC",
+                'description'=>"asdfasdfasdf",
+                'location'=>"Indonesia",
+                'price_estimation'=>"500rb - 700rb",
+                'starts_from'=>Carbon::create(2023, 5, 22),
+                'ends_at'=>Carbon::create(2023, 5, 28),
+                'syarat_ketentuan'=>"images/ketentuan_9thNPLC",
+                'slot'=>7,
+                'logo'=>"logo/ketentuan_9thNPLC",
+                'user_id' => 1,
+            ]
+        );
+        Bazaar::create(
+            [
+                'name' => "9th NPLC",
+                'description'=>"asdfasdfasdf",
+                'location'=>"Indonesia",
+                'price_estimation'=>"500rb - 700rb",
+                'starts_from'=>Carbon::create(2023, 5, 22),
+                'ends_at'=>Carbon::create(2023, 5, 28),
+                'syarat_ketentuan'=>"images/ketentuan_9thNPLC",
+                'slot'=>7,
+                'logo'=>"logo/ketentuan_9thNPLC",
+                'user_id' => 1,
+            ]
+        );
+        Bazaar::create(
+            [
+                'name' => "9th NPLC",
+                'description'=>"asdfasdfasdf",
+                'location'=>"Indonesia",
+                'price_estimation'=>"500rb - 700rb",
+                'starts_from'=>Carbon::create(2023, 5, 22),
+                'ends_at'=>Carbon::create(2023, 5, 28),
+                'syarat_ketentuan'=>"images/ketentuan_9thNPLC",
+                'slot'=>7,
+                'logo'=>"logo/ketentuan_9thNPLC",
+                'user_id' => 1,
+            ]
+        );
+        Bazaar::create(
+            [
+                'name' => "9th NPLC",
+                'description'=>"asdfasdfasdf",
+                'location'=>"Indonesia",
+                'price_estimation'=>"500rb - 700rb",
+                'starts_from'=>Carbon::create(2023, 5, 22),
+                'ends_at'=>Carbon::create(2023, 5, 28),
+                'syarat_ketentuan'=>"images/ketentuan_9thNPLC",
+                'slot'=>7,
+                'logo'=>"logo/ketentuan_9thNPLC",
+                'user_id' => 1,
+            ]
+        );
+        Bazaar::create(
+            [
+                'name' => "9th NPLC",
+                'description'=>"asdfasdfasdf",
+                'location'=>"Indonesia",
+                'price_estimation'=>"500rb - 700rb",
+                'starts_from'=>Carbon::create(2023, 5, 22),
+                'ends_at'=>Carbon::create(2023, 5, 28),
+                'syarat_ketentuan'=>"images/ketentuan_9thNPLC",
+                'slot'=>7,
+                'logo'=>"logo/ketentuan_9thNPLC",
+                'user_id' => 1,
+            ]
+        );
+        Bazaar::create(
+            [
+                'name' => "9th NPLC",
+                'description'=>"asdfasdfasdf",
+                'location'=>"Indonesia",
+                'price_estimation'=>"500rb - 700rb",
+                'starts_from'=>Carbon::create(2023, 5, 22),
+                'ends_at'=>Carbon::create(2023, 5, 28),
+                'syarat_ketentuan'=>"images/ketentuan_9thNPLC",
+                'slot'=>7,
+                'logo'=>"logo/ketentuan_9thNPLC",
+                'user_id' => 1,
+            ]
+        );
+        Bazaar::create(
+            [
+                'name' => "9th NPLC",
+                'description'=>"asdfasdfasdf",
+                'location'=>"Indonesia",
+                'price_estimation'=>"500rb - 700rb",
+                'starts_from'=>Carbon::create(2023, 5, 22),
+                'ends_at'=>Carbon::create(2023, 5, 28),
+                'syarat_ketentuan'=>"images/ketentuan_9thNPLC",
+                'slot'=>7,
+                'logo'=>"logo/ketentuan_9thNPLC",
+                'user_id' => 1,
+            ]
+        );
+        Bazaar::create(
+            [
+                'name' => "9th NPLC",
+                'description'=>"asdfasdfasdf",
+                'location'=>"Indonesia",
+                'price_estimation'=>"500rb - 700rb",
+                'starts_from'=>Carbon::create(2023, 5, 22),
+                'ends_at'=>Carbon::create(2023, 5, 28),
+                'syarat_ketentuan'=>"images/ketentuan_9thNPLC",
+                'slot'=>7,
+                'logo'=>"logo/ketentuan_9thNPLC",
+                'user_id' => 1,
+            ]
+        );
+        Bazaar::create(
+            [
+                'name' => "9th NPLC",
+                'description'=>"asdfasdfasdf",
+                'location'=>"Indonesia",
+                'price_estimation'=>"500rb - 700rb",
+                'starts_from'=>Carbon::create(2023, 5, 22),
+                'ends_at'=>Carbon::create(2023, 5, 28),
+                'syarat_ketentuan'=>"images/ketentuan_9thNPLC",
+                'slot'=>7,
+                'logo'=>"logo/ketentuan_9thNPLC",
+                'user_id' => 1,
+            ]
+        );
+        Bazaar::create(
+            [
                 'name' => "Hackfest",
                 'description'=>"asdfasdfasdf",
                 'location'=>"Indonesia",

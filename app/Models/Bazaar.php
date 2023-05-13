@@ -20,6 +20,7 @@ class Bazaar extends Model
         'syarat_ketentuan',
         'slot',
         'logo',
+        'payment'
     ];
 
     public function bazaar_tenants(){
