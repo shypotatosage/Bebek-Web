@@ -27,7 +27,7 @@
 </head>
 <body style="background-color: #FAFAFA;" id="download">
     @include('layouts.nav')
-    <div class="container mt-5">
+    <div class="">
         @yield('content')
     </div>
     </body>
