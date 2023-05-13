@@ -31,6 +31,13 @@
             <i class="fa-solid fa-envelope mt-3 me-3"></i>{{ $user->email }}
             <br>
             <i class="fa-solid fa fa-phone mt-3 me-3"></i>{{ $user->phone_number }}
+            @auth
+                    <form action="/logout" method="POST" class="mb-2">
+                        @csrf
+                        <button type="submit"
+                            class="btn btn-logout font-montserrat fw-semibold py-2 px-4">Logout</button>
+                    </form>
+                @endauth
         </div>
     </div>
     </div>
