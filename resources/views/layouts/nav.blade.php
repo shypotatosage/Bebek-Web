@@ -11,15 +11,30 @@
                 <li class="nav-item active">
                     <a class="nav-link py-2 px-4" href="/bazaars">Bazaars</a>
                 </li>
+                <li class="nav-item active">
+                    <a class="nav-link py-2 px-4" href="/bazaars">My Bazaars</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link py-2 px-4" href="/bazaars">My Tenants</a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link py-2 px-4" href="/about">About</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link py-2 px-4" href="/contact">Contact Us</a>
                 </li>
+
+                @guest
                 <li class="nav-item">
                     <a class="nav-link py-2 px-4" href="/login">Login</a>
                 </li>
+                @endguest
+
+                @auth
+                <li class="nav-item">
+                    <a class="nav-link py-2 px-4" href="/profile">Profile</a>
+                </li>
+                @endauth
             </ul>
         </div>
     </div>

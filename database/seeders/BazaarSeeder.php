@@ -25,7 +25,7 @@ class BazaarSeeder extends Seeder
                 'syarat_ketentuan'=>"images/ketentuan_9thNPLC",
                 'slot'=>7,
                 'logo'=>"logo/ketentuan_9thNPLC",
-                'id_user' => 1,
+                'user_id' => 1,
             ]
         );
         Bazaar::create(
@@ -39,7 +39,7 @@ class BazaarSeeder extends Seeder
                 'syarat_ketentuan'=>"images/ketentuan_Hackfest",
                 'slot'=>7,
                 'logo'=>"logo/ketentuan_Hackfest",
-                'id_user' => 1,
+                'user_id' => 1,
             ]
         );
         Bazaar::create(
@@ -53,7 +53,7 @@ class BazaarSeeder extends Seeder
                 'syarat_ketentuan'=>"images/ketentuan_Waisak",
                 'slot'=>7,
                 'logo'=>"logo/ketentuan_Waisak",
-                'id_user' => 2,
+                'user_id' => 2,
             ]
         );
         Bazaar::create(
@@ -67,7 +67,7 @@ class BazaarSeeder extends Seeder
                 'syarat_ketentuan'=>"images/ketentuan_Deanscup",
                 'slot'=>7,
                 'logo'=>"logo/ketentuan_Deanscup",
-                'id_user' => 3,
+                'user_id' => 3,
             ]
         );
     }

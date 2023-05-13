@@ -18,10 +18,10 @@
 
 <link rel="stylesheet" href="{{ asset('styles/supportStyle.css') }}">
 @endsection
-@section('title', 'Pendaftaran Bazaar')
+@section('title', 'Contact Us')
 
 @section('content')
-
+<div class="container mt-5">
     <div class="contact-area pb-4">
         <h1 class="title-contact">Hubungi Kami</h1>
         <div class="company-sosmed">
@@ -71,7 +71,7 @@
                             <i class="fa-brands fa-whatsapp"></i><a
                                 href="https://api.whatsapp.com/send?phone=081216501976">081216501976</a>
                             <br>
-                            <i class="fa-solid fa-envelope"></i><a href="mailto: marsha@gmail.com">marsha@gmail.com</a>
+                            <i class="fa-solid fa-envelope"></i><a href="mailto: marsha@gmail.com">evelyn@gmail.com</a>
                         </p>
                     </div>
                 </div>
@@ -88,7 +88,7 @@
                             <i class="fa-brands fa-whatsapp"></i><a
                                 href="https://api.whatsapp.com/send?phone=081216501976">081216501976</a>
                             <br>
-                            <i class="fa-solid fa-envelope"></i><a href="mailto: marsha@gmail.com">marsha@gmail.com</a>
+                            <i class="fa-solid fa-envelope"></i><a href="mailto: marsha@gmail.com">hayya@gmail.com</a>
                         </p>
                     </div>
                 </div>
@@ -104,7 +104,7 @@
                             <i class="fa-brands fa-whatsapp"></i><a
                                 href="https://api.whatsapp.com/send?phone=081216501976">081216501976</a>
                             <br>
-                            <i class="fa-solid fa-envelope"></i><a href="mailto: marsha@gmail.com">marsha@gmail.com</a>
+                            <i class="fa-solid fa-envelope"></i><a href="mailto: marsha@gmail.com">marcel@gmail.com</a>
                         </p>
                     </div>
                 </div>
@@ -120,11 +120,12 @@
                             <i class="fa-brands fa-whatsapp"></i><a
                                 href="https://api.whatsapp.com/send?phone=081216501976">081216501976</a>
                             <br>
-                            <i class="fa-solid fa-envelope"></i><a href="mailto: marsha@gmail.com">marsha@gmail.com</a>
+                            <i class="fa-solid fa-envelope"></i><a href="mailto: marsha@gmail.com">micheila@gmail.com</a>
                         </p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 @endsection

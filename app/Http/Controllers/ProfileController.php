@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\User;
 use App\Http\Requests\ProfileUpdateRequest;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -11,6 +11,19 @@ use Illuminate\View\View;
 
 class ProfileController extends Controller
 {
+
+    public function index(Request $request) //nama ini ditulis di router sebagai 'index'
+    {
+        $user = $request->user();
+
+        // $user =  DB::select("SELECT `id`, `name`, `email`, `email_verified_at`, `password`, `profile_picture`, `status`, `user_status`, `remember_token`, `created_at`, `updated_at` FROM `users` where id='$user->id'");
+        
+        $user = User::findOrFail($user->id);
+        return view('profile', [
+            'title' => 'Profile',
+            'user' => $user,
+        ]);
+    }
     /**
      * Display the user's profile form.
      */
@@ -35,6 +48,11 @@ class ProfileController extends Controller
         $request->user()->save();
 
         return Redirect::route('profile.edit')->with('status', 'profile-updated');
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
     }
 
     /**
