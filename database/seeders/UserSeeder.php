@@ -74,5 +74,29 @@ class UserSeeder extends Seeder
                 'role'=>"Admin",
             ]
         );
+        User::create(
+            [
+                'name' => 'tes1',
+                'email' => "tes1@gmail.com",
+                'bank_type_id' => '1',
+                'phone_number' =>"082711231231",
+                'bank_account_number' =>"08366971124",
+                'password'=>Hash::make("tes123"),
+                'profile_picture' =>"profile.png",
+                'role'=>"Tenant",
+            ]
+        );
+        User::create(
+            [
+                'name' => 'tes2',
+                'email' => "tes2@gmail.com",
+                'bank_type_id' => '1',
+                'phone_number' =>"082712312312311",
+                'bank_account_number' =>"08366971124",
+                'password'=>Hash::make("tes123"),
+                'profile_picture' =>"profile.png",
+                'role'=>"Host",
+            ]
+        );
     }
 }
