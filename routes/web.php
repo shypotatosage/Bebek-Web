@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BazaarTenantController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Controller;
 
 use App\Models\BazaarTenant;
 
@@ -45,6 +46,8 @@ Route::get('/joinbazaar', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/logout', [ProfileController::class, 'logout']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
