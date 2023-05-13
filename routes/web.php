@@ -1,7 +1,10 @@
 <?php
 
+use App\Http\Controllers\BazaarTenantController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\Controller;
+
+use App\Models\BazaarTenant;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,6 +19,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [Controller::class, 'dashboard']);
+
+Route::post('/join-bazaar', [BazaarTenantController::class, 'store'])->middleware(['auth', 'verified']);
 
 Route::get('/login', function () {
     return view('auth.login');
@@ -35,9 +40,9 @@ Route::get('/dashboard', function () {
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    // Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    // Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    // Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
 require __DIR__.'/auth.php';
