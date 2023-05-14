@@ -51,7 +51,7 @@
                     </small>
                 </div>
                 <div class="mb-3 mt-4">
-                    <input type="number" class="form-control" id="inputBankAccountNumber" name="bank_account_number" placeholder="Bank Account Number" required>
+                    <input type="number" class="form-control" id="inputBankAccountNumber" name="bank_account_number" placeholder="No Rekening BCA" required>
                     <small class="text-danger">
                     @foreach ($errors->get('bank_account_number') as $err)
                         @if ($loop->iteration > 1)
