@@ -27,7 +27,10 @@ class BazaarResource extends Resource
         return $form
             ->schema([
                 Card::make()->schema([
-                    Forms\Components\TextInput::make('name')
+                Forms\Components\TextInput::make('user_id')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(255),
                 Forms\Components\Textarea::make('description')
@@ -53,9 +56,10 @@ class BazaarResource extends Resource
                     })
                     ->closeOnDateSelection()
                     ->required(),
-                Forms\Components\FileUpload::make('syarat_dan_ketentuan')
+                Forms\Components\FileUpload::make('syarat_ketentuan')
                     ->acceptedFileTypes(['application/pdf'])
                     ->maxSize(2048)
+                    ->dehydrated(fn ($state) => filled($state))
                     ->preserveFilenames(),
                     // ->disabled(),
                 Forms\Components\TextInput::make('slot')
@@ -70,7 +74,7 @@ class BazaarResource extends Resource
             ]);
     }
 
-// bazaar id
+// bazaar_id
 // name
 // description
 // location
