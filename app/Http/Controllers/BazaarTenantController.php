@@ -57,8 +57,8 @@ class BazaarTenantController extends Controller
             'bazaar_id' => $request->bazaar_id,
             'activity' => $request->activity,
             'activity_detail' => $request->activity_detail,
-            'mou' => $request->file('mou')->store('public/mou'),
-            'payment_prove' => $request->file('payment_prove')->store('public/payment_proves')
+            'mou' => $request->file('mou')->store('mou'),
+            'payment_prove' => $request->file('payment_prove')->store('payment_proves')
         ]);
 
         return redirect('/');
