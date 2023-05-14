@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('activity_detail');
             $table->text('mou');
             $table->text('payment_prove');
-            $table->string('status')->default('Pending');
+            $table->string('status')->default('pending');
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('bazaar_id')->references('id')->on('bazaars')->onDelete('cascade')->onUpdate('cascade');
