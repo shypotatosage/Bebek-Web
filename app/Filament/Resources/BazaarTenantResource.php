@@ -66,6 +66,7 @@ class BazaarTenantResource extends Resource
                 Tables\Columns\TextColumn::make('bazaar_id'),
                 Tables\Columns\TextColumn::make('activity'),
                 Tables\Columns\TextColumn::make('activity_detail')
+                    ->limit(10)
                     ->sortable(),
                 Tables\Columns\TextColumn::make('mou')
                     ->limit(15),

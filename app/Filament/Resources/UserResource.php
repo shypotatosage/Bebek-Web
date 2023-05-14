@@ -26,7 +26,7 @@ class UserResource extends Resource
         return $form
             ->schema([
                 Card::make()->schema([
-                    Forms\Components\TextInput::make('name')
+                Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(255),
                 Forms\Components\TextInput::make('email')

@@ -2,6 +2,8 @@
 
 namespace App\Filament\Resources;
 
+use Closure;
+use Carbon\Carbon;
 use App\Filament\Resources\BazaarResource\Pages;
 use App\Filament\Resources\BazaarResource\RelationManagers;
 use App\Models\Bazaar;
@@ -37,9 +39,18 @@ class BazaarResource extends Resource
                     ->required()
                     ->maxLength(255),
                 Forms\Components\DatePicker::make("starts_from")
+                    ->minDate(now())
+                    ->reactive()
                     ->closeOnDateSelection()
                     ->required(),
                 Forms\Components\DatePicker::make("ends_at")
+                    ->minDate(function (Closure $get) {
+                        $startDate = $get('starts_from');
+                        if ($startDate != null) {
+                            return Carbon::parse($startDate)->subDays(0);
+                        }
+                        return null;
+                    })
                     ->closeOnDateSelection()
                     ->required(),
                 Forms\Components\FileUpload::make('syarat_dan_ketentuan')
