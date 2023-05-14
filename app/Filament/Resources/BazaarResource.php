@@ -65,7 +65,7 @@ class BazaarResource extends Resource
                 Forms\Components\FileUpload::make('logo')
                     ->image()
                     ->dehydrated(fn ($state) => filled($state))
-                    ->disabled(),
+                    ->maxSize(2048),
                 ])
             ]);
     }
