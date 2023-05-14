@@ -22,9 +22,9 @@ class BazaarSeeder extends Seeder
                 'price_estimation'=>"500rb - 700rb",
                 'starts_from'=>Carbon::create(2023, 5, 22),
                 'ends_at'=>Carbon::create(2023, 5, 28),
-                'syarat_ketentuan'=>"images/ketentuan_9thNPLC",
+                'syarat_ketentuan'=>"logo/ketentuan_9thNPLC",
                 'slot'=>7,
-                'logo'=>"logo/ketentuan_9thNPLC",
+                'logo'=>"logo/ketentuan_SummerHoliday.jpg",
                 'user_id' => 2,
             ]
         );
@@ -36,9 +36,9 @@ class BazaarSeeder extends Seeder
                 'price_estimation'=>"500rb - 700rb",
                 'starts_from'=>Carbon::create(2023, 5, 22),
                 'ends_at'=>Carbon::create(2023, 5, 28),
-                'syarat_ketentuan'=>"images/ketentuan_9thNPLC",
+                'syarat_ketentuan'=>"logo/ketentuan_9thNPLC",
                 'slot'=>7,
-                'logo'=>"logo/ketentuan_9thNPLC",
+                'logo'=>"logo/ketentuan_AutumbHoliday.jpg",
                 'user_id' => 3,
             ]
         );
@@ -50,9 +50,9 @@ class BazaarSeeder extends Seeder
                 'price_estimation'=>"500rb - 700rb",
                 'starts_from'=>Carbon::create(2023, 5, 22),
                 'ends_at'=>Carbon::create(2023, 5, 28),
-                'syarat_ketentuan'=>"images/ketentuan_9thNPLC",
+                'syarat_ketentuan'=>"logo/ketentuan_9thNPLC",
                 'slot'=>7,
-                'logo'=>"logo/ketentuan_9thNPLC",
+                'logo'=>"logo/ketentuan_AutumbHoliday.jpg",
                 'user_id' => 1,
             ]
         );
@@ -64,9 +64,9 @@ class BazaarSeeder extends Seeder
                 'price_estimation'=>"500rb - 700rb",
                 'starts_from'=>Carbon::create(2023, 5, 22),
                 'ends_at'=>Carbon::create(2023, 5, 28),
-                'syarat_ketentuan'=>"images/ketentuan_9thNPLC",
+                'syarat_ketentuan'=>"logo/ketentuan_9thNPLC",
                 'slot'=>7,
-                'logo'=>"logo/ketentuan_9thNPLC",
+                'logo'=>"logo/ketentuan_AutumbHoliday.jpg",
                 'user_id' => 3,
             ]
         );
@@ -78,9 +78,9 @@ class BazaarSeeder extends Seeder
                 'price_estimation'=>"500rb - 700rb",
                 'starts_from'=>Carbon::create(2023, 5, 22),
                 'ends_at'=>Carbon::create(2023, 5, 28),
-                'syarat_ketentuan'=>"images/ketentuan_9thNPLC",
+                'syarat_ketentuan'=>"logo/ketentuan_9thNPLC",
                 'slot'=>7,
-                'logo'=>"logo/ketentuan_9thNPLC",
+                'logo'=>"logo/ketentuan_AutumbHoliday.jpg",
                 'user_id' => 2,
             ]
         );
@@ -92,9 +92,9 @@ class BazaarSeeder extends Seeder
                 'price_estimation'=>"500rb - 700rb",
                 'starts_from'=>Carbon::create(2023, 5, 22),
                 'ends_at'=>Carbon::create(2023, 5, 28),
-                'syarat_ketentuan'=>"images/ketentuan_9thNPLC",
+                'syarat_ketentuan'=>"logo/ketentuan_9thNPLC",
                 'slot'=>7,
-                'logo'=>"logo/ketentuan_9thNPLC",
+                'logo'=>"logo/ketentuan_AutumbHoliday.jpg",
                 'user_id' => 5,
             ]
         );
@@ -106,9 +106,9 @@ class BazaarSeeder extends Seeder
                 'price_estimation'=>"500rb - 700rb",
                 'starts_from'=>Carbon::create(2023, 5, 22),
                 'ends_at'=>Carbon::create(2023, 5, 28),
-                'syarat_ketentuan'=>"images/ketentuan_9thNPLC",
+                'syarat_ketentuan'=>"logo/ketentuan_9thNPLC",
                 'slot'=>7,
-                'logo'=>"logo/ketentuan_9thNPLC",
+                'logo'=>"logo/ketentuan_AutumbHoliday.jpg",
                 'user_id' => 4,
             ]
         );
@@ -120,9 +120,9 @@ class BazaarSeeder extends Seeder
                 'price_estimation'=>"500rb - 700rb",
                 'starts_from'=>Carbon::create(2023, 5, 22),
                 'ends_at'=>Carbon::create(2023, 5, 28),
-                'syarat_ketentuan'=>"images/ketentuan_9thNPLC",
+                'syarat_ketentuan'=>"logo/ketentuan_9thNPLC",
                 'slot'=>7,
-                'logo'=>"logo/ketentuan_9thNPLC",
+                'logo'=>"logo/ketentuan_SummerHoliday.jpg",
                 'user_id' => 4,
             ]
         );
@@ -134,9 +134,9 @@ class BazaarSeeder extends Seeder
                 'price_estimation'=>"500rb - 700rb",
                 'starts_from'=>Carbon::create(2023, 5, 22),
                 'ends_at'=>Carbon::create(2023, 5, 28),
-                'syarat_ketentuan'=>"images/ketentuan_9thNPLC",
+                'syarat_ketentuan'=>"logo/ketentuan_9thNPLC",
                 'slot'=>7,
-                'logo'=>"logo/ketentuan_9thNPLC",
+                'logo'=>"logo/ketentuan_SummerHoliday.jpg",
                 'user_id' => 4,
             ]
         );
@@ -148,9 +148,9 @@ class BazaarSeeder extends Seeder
                 'price_estimation'=>"500rb - 700rb",
                 'starts_from'=>Carbon::create(2023, 5, 22),
                 'ends_at'=>Carbon::create(2023, 5, 28),
-                'syarat_ketentuan'=>"images/ketentuan_9thNPLC",
+                'syarat_ketentuan'=>"logo/ketentuan_9thNPLC",
                 'slot'=>7,
-                'logo'=>"logo/ketentuan_9thNPLC",
+                'logo'=>"logo/ketentuan_SummerHoliday.jpg",
                 'user_id' => 3,
             ]
         );
@@ -162,9 +162,9 @@ class BazaarSeeder extends Seeder
                 'price_estimation'=>"500rb - 700rb",
                 'starts_from'=>Carbon::create(2023, 2, 22),
                 'ends_at'=>Carbon::create(2023, 2, 28),
-                'syarat_ketentuan'=>"images/ketentuan_Hackfest",
+                'syarat_ketentuan'=>"logo/ketentuan_Hackfest",
                 'slot'=>7,
-                'logo'=>"logo/ketentuan_Hackfest",
+                'logo'=>"logo/ketentuan_AutumnHoliday.jpeg",
                 'user_id' => 3,
             ]
         );
@@ -176,9 +176,9 @@ class BazaarSeeder extends Seeder
                 'price_estimation'=>"200rb - 400rb",
                 'starts_from'=>Carbon::create(2023, 5, 22),
                 'ends_at'=>Carbon::create(2023, 5, 28),
-                'syarat_ketentuan'=>"images/ketentuan_Waisak",
+                'syarat_ketentuan'=>"logo/ketentuan_Waisak",
                 'slot'=>7,
-                'logo'=>"logo/ketentuan_Waisak",
+                'logo'=>"logo/ketentuan_AutumnHoliday.jpeg",
                 'user_id' => 2,
             ]
         );
@@ -190,9 +190,9 @@ class BazaarSeeder extends Seeder
                 'price_estimation'=>"500rb - 700rb",
                 'starts_from'=>Carbon::create(2021, 5, 22),
                 'ends_at'=>Carbon::create(2021, 5, 28),
-                'syarat_ketentuan'=>"images/ketentuan_Deanscup",
+                'syarat_ketentuan'=>"logo/ketentuan_Deanscup",
                 'slot'=>7,
-                'logo'=>"logo/ketentuan_Deanscup",
+                'logo'=>"logo/ketentuan_SummerHoliday.jpg",
                 'user_id' => 3,
             ]
         );
@@ -204,9 +204,9 @@ class BazaarSeeder extends Seeder
                 'price_estimation'=>"500rb - 700rb",
                 'starts_from'=>Carbon::create(2021, 12, 20),
                 'ends_at'=>Carbon::create(2021, 12, 28),
-                'syarat_ketentuan'=>"images/ketentuan_Deanscup",
+                'syarat_ketentuan'=>"logo/ketentuan_Deanscup",
                 'slot'=>7,
-                'logo'=>"logo/ketentuan_Christmas",
+                'logo'=>"logo/ketentuan_SummerHoliday.jpg",
                 'user_id' => 4,
             ]
         );
@@ -218,9 +218,9 @@ class BazaarSeeder extends Seeder
                 'price_estimation'=>"300rb - 600rb",
                 'starts_from'=>Carbon::create(2021, 5, 22),
                 'ends_at'=>Carbon::create(2021, 5, 28),
-                'syarat_ketentuan'=>"images/ketentuan_SummerHoliday",
+                'syarat_ketentuan'=>"logo/ketentuan_SummerHoliday",
                 'slot'=>7,
-                'logo'=>"logo/ketentuan_SummerHoliday",
+                'logo'=>"logo/ketentuan_AutumnHoliday.jpeg",
                 'user_id' => 4,
             ]
         );
@@ -232,9 +232,9 @@ class BazaarSeeder extends Seeder
                 'price_estimation'=>"600rb - 800rb",
                 'starts_from'=>Carbon::create(2021, 5, 22),
                 'ends_at'=>Carbon::create(2021, 5, 28),
-                'syarat_ketentuan'=>"images/ketentuan_AutumnHoliday",
+                'syarat_ketentuan'=>"logo/ketentuan_AutumnHoliday",
                 'slot'=>7,
-                'logo'=>"logo/ketentuan_AutumnHoliday",
+                'logo'=>"logo/ketentuan_SummerHoliday.jpg",
                 'user_id' => 2,
             ]
         );
@@ -246,9 +246,9 @@ class BazaarSeeder extends Seeder
                 'price_estimation'=>"600rb - 800rb",
                 'starts_from'=>Carbon::create(2021, 5, 22),
                 'ends_at'=>Carbon::create(2021, 5, 28),
-                'syarat_ketentuan'=>"images/ketentuan_AutumnHoliday",
+                'syarat_ketentuan'=>"logo/ketentuan_AutumnHoliday",
                 'slot'=>7,
-                'logo'=>"logo/ketentuan_AutumnHoliday",
+                'logo'=>"logo/ketentuan_SummerHoliday.jpg",
                 'user_id' => 2,
             ]
         );
@@ -261,9 +261,9 @@ class BazaarSeeder extends Seeder
                 'price_estimation'=>"500rb - 700rb",
                 'starts_from'=>Carbon::create(2023, 5, 22),
                 'ends_at'=>Carbon::create(2023, 5, 28),
-                'syarat_ketentuan'=>"images/ketentuan_9thNPLC",
+                'syarat_ketentuan'=>"logo/ketentuan_9thNPLC",
                 'slot'=>7,
-                'logo'=>"logo/ketentuan_9thNPLC",
+                'logo'=>"logo/ketentuan_Waisak.jpg",
                 'user_id' => 3,
             ]
         );
@@ -275,9 +275,9 @@ class BazaarSeeder extends Seeder
                 'price_estimation'=>"500rb - 700rb",
                 'starts_from'=>Carbon::create(2023, 2, 22),
                 'ends_at'=>Carbon::create(2023, 2, 28),
-                'syarat_ketentuan'=>"images/ketentuan_Hackfest",
+                'syarat_ketentuan'=>"logo/ketentuan_Hackfest",
                 'slot'=>7,
-                'logo'=>"logo/ketentuan_Hackfest",
+                'logo'=>"logo/ketentuan_Waisak.jpg",
                 'user_id' => 5,
             ]
         );
@@ -289,9 +289,9 @@ class BazaarSeeder extends Seeder
                 'price_estimation'=>"200rb - 400rb",
                 'starts_from'=>Carbon::create(2023, 5, 22),
                 'ends_at'=>Carbon::create(2023, 5, 28),
-                'syarat_ketentuan'=>"images/ketentuan_Waisak",
+                'syarat_ketentuan'=>"s&k/ketentuan_Waisak",
                 'slot'=>7,
-                'logo'=>"logo/ketentuan_Waisak",
+                'logo'=>"logo/ketentuan_Waisak.jpg",
                 'user_id' => 2,
             ]
         );
@@ -303,9 +303,9 @@ class BazaarSeeder extends Seeder
                 'price_estimation'=>"500rb - 700rb",
                 'starts_from'=>Carbon::create(2021, 5, 22),
                 'ends_at'=>Carbon::create(2021, 5, 28),
-                'syarat_ketentuan'=>"images/ketentuan_Deanscup",
+                'syarat_ketentuan'=>"s&k/ketentuan_Deanscup",
                 'slot'=>7,
-                'logo'=>"logo/ketentuan_Deanscup",
+                'logo'=>"logo/ketentuan_Deanscup.jpeg",
                 'user_id' => 4,
             ]
         );
@@ -317,9 +317,9 @@ class BazaarSeeder extends Seeder
                 'price_estimation'=>"500rb - 700rb",
                 'starts_from'=>Carbon::create(2021, 12, 20),
                 'ends_at'=>Carbon::create(2021, 12, 28),
-                'syarat_ketentuan'=>"images/ketentuan_Deanscup",
+                'syarat_ketentuan'=>"s&k/ketentuan_Deanscup.jpeg",
                 'slot'=>7,
-                'logo'=>"logo/ketentuan_Christmas",
+                'logo'=>"logo/ketentuan_Deanscup.jpeg",
                 'user_id' => 3,
             ]
         );
@@ -331,9 +331,9 @@ class BazaarSeeder extends Seeder
                 'price_estimation'=>"300rb - 600rb",
                 'starts_from'=>Carbon::create(2021, 5, 22),
                 'ends_at'=>Carbon::create(2021, 5, 28),
-                'syarat_ketentuan'=>"images/ketentuan_SummerHoliday",
+                'syarat_ketentuan'=>"s&k/ketentuan_SummerHoliday.jpg",
                 'slot'=>7,
-                'logo'=>"logo/ketentuan_SummerHoliday",
+                'logo'=>"logo/ketentuan_SummerHoliday.jpg",
                 'user_id' => 4,
             ]
         );
@@ -345,9 +345,9 @@ class BazaarSeeder extends Seeder
                 'price_estimation'=>"600rb - 800rb",
                 'starts_from'=>Carbon::create(2021, 5, 22),
                 'ends_at'=>Carbon::create(2021, 5, 28),
-                'syarat_ketentuan'=>"images/ketentuan_AutumnHoliday",
+                'syarat_ketentuan'=>"s&k/ketentuan_AutumnHoliday.jpeg",
                 'slot'=>7,
-                'logo'=>"logo/ketentuan_AutumnHoliday",
+                'logo'=>"logo/ketentuan_AutumnHoliday.jpeg",
                 'user_id' => 2,
             ]
         );
