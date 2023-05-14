@@ -7,7 +7,7 @@
 @endsection
 @section('title', 'Pendaftaran Bazaar')
 @section('content')
-    <div class="container mt-4 text-center">
+    <div class="container mt-5 text-center pt-5">
         <h1>{{ $bazaar->name }}</h1>
         <p>{{ $bazaar->description }}</p>
         <p>{{ $bazaar->location }}</p>
