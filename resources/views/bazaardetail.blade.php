@@ -71,7 +71,7 @@
                     <p class="fw-medium fs-5 ms-5 fw-semibold"><?= $tenant['username'] ?></p>
                     <p class="fw-medium fs-5 ms-5"><?= $tenant['activity_detail'] ?></p>
                     <a class="fw-medium fs-5 ms-5" href="{{ asset('storage/' . $tenant->mou) }}">MoU</a>
-                    <a href="{{ asset('storage/' . $tenant->payment_prove) }}">Payment Prove</a>
+                    <a class="fw-medium fs-5 ms-5" href="{{ asset('storage/' . $tenant->payment_prove) }}">Payment Prove</a>
 
                     @auth
                         @if (auth()->user()->role == 'Host')
