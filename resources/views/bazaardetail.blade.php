@@ -10,7 +10,7 @@
         <div class="container mt-5">
             <div
                 class="d-flex flex-column flex-md-row align-items-center justify-content-center justify-content-md-start pb-md-5 pb-3">
-                <img src="{{ asset('images/assets/bazaarbond.png') }}" class="rounded-4 bazaar-logo">
+                <img src="{{ asset('storage/' . $item->logo) }}" class="rounded-4 bazaar-logo">
                 <div class="ps-md-5 text-center text-md-start">
                     <div class="d-flex flex-column flex-md-row text-center text-md-start pt-4 pt-md-0 align-items-center">
                         <p class="fs-2 pe-4 fw-bold"><?= $item['name'] ?></p>
@@ -70,6 +70,7 @@
                     <p class="fw-medium fs-5 fw-bold"><?= $i ?></p>
                     <p class="fw-medium fs-5 ms-5 fw-semibold"><?= $tenant['username'] ?></p>
                     <p class="fw-medium fs-5 ms-5"><?= $tenant['activity_detail'] ?></p>
+
                     <a class="fw-medium fs-5 ms-5" href="{{ asset('storage/' . $tenant->mou) }}">MoU</a>
                     <a href="{{ asset('storage/' . $tenant->payment_prove) }}">Payment Prove</a>
 
