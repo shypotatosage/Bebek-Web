@@ -28,19 +28,22 @@
                     {{-- <form action="{{ route('bazaars.show', $item->id) }}" method="GET" class="me-3 mt-2 mt-md-0 mb-4 mb-md-0"> --}}
                     @auth
                         @if (auth()->user()->role == 'Host')
-                            <form action="/updatetenants" method="post" enctype="multipart/form-data">
-                                @csrf
-                                <input type="hidden" name="id_bazaar" value="{{ $item['id'] }}">
-                                <button type="submit" style="background-color:#cf3e12;"
-                                    class="btn btn-secondary font-montserrat fw-semibold py-2 px-4 mt-2 px-5" name="remove"
-                                    value="remove">Remove</button>
-                            </form>
-                            <form action="/edit-bazaar/{{ $item->id }}" method="get" enctype="multipart/form-data">
-                                @csrf
-                                <button type="submit" class="btn btn-secondary font-montserrat fw-semibold py-2 px-4 mt-2 px-5"
-                                    >+
-                                    Edit Bazaar</button>
-                            </form>
+                        @if ($item['id']==auth()->user()->id)
+                        <form action="/updatetenants" method="post" enctype="multipart/form-data">
+                            @csrf
+                            <input type="hidden" name="id_bazaar" value="{{ $item['id'] }}">
+                            <button type="submit" style="background-color:#cf3e12;"
+                                class="btn btn-secondary font-montserrat fw-semibold py-2 px-4 mt-2 px-5" name="remove"
+                                value="remove">Remove</button>
+                        </form>
+                        <form action="/edit-bazaar/{{ $item->id }}" method="get" enctype="multipart/form-data">
+                            @csrf
+                            <button type="submit" class="btn btn-secondary font-montserrat fw-semibold py-2 px-4 mt-2 px-5"
+                                >+
+                                Edit Bazaar</button>
+                        </form>
+                        @endif
+                            
                         @else
                             @if (count($count) >= $item['slot'])
                                 <button type="submit" style="background-color:#2B2D42;"
@@ -62,12 +65,12 @@
             @php
                 $i = 1;
             @endphp
-            @foreach ($count as $tenant)
+            @foreach ($tenants as $tenant)
                 <div class="flex-container pb-4  w-100" style="display: flex;">
                     <p class="fw-medium fs-5 fw-bold"><?= $i ?></p>
                     <p class="fw-medium fs-5 ms-5 fw-semibold"><?= $tenant['username'] ?></p>
                     <p class="fw-medium fs-5 ms-5"><?= $tenant['activity_detail'] ?></p>
-                    <a href="{{ asset('storage/' . $tenant->mou) }}">MoU</a>
+                    <a class="fw-medium fs-5 ms-5" href="{{ asset('storage/' . $tenant->mou) }}">MoU</a>
                     <a href="{{ asset('storage/' . $tenant->payment_prove) }}">Payment Prove</a>
 
                     @auth
